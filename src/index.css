@@ -2,7 +2,8 @@
 
 html, body {
 font: 14px "muli", sans-serif;
-height: 100%;
+width: 100vw;
+height: 100vh;
 margin: 0;
 }
 
@@ -50,21 +51,40 @@ body {
     color: black;
 }
 
+.v-divider{
+    border-left: 0.13vh solid rgb(65, 65, 65);
+    height: 10vh;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.ust-logo {
+    width: 5vh;
+    height: 5vh;
+    top: 2vh;
+    right: 2vh;
+    opacity: 0.7;
+    position: absolute;
+    background-size:cover;
+    background-image: url('../public/ust_logo.png');
+}
+
 /******* Menu Title & Descriptions *********/
 
 .home-half{
     position: relative;
     width:50%;
-    padding: 1vh;
+    padding: 0.7vh;
 }
 
 .title{
     font-size: large;
     font-weight: 700;
+    overflow: hidden;
 }
 
 .description{
-    font-size: small;
+    font-size: smaller;
     font-weight: 400;
 }
 
@@ -74,9 +94,7 @@ body {
 
 span
 {
-    line-height: normal;
-    display:inline-block;
-    vertical-align: middle;
+    display:block;
 }
 
 /******** Explore Button ********/
@@ -108,5 +126,5 @@ button:hover path{
 
 button:hover {
     background-color: #e8f9c1; /* Green */
-    color: rgb(87, 106, 10)
+    color: rgb(87, 106, 10);
 }
