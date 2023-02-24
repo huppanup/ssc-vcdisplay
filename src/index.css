@@ -1,13 +1,112 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://use.typekit.net/tgv1zyr.css");
+
+html, body {
+font: 14px "muli", sans-serif;
+height: 100%;
+margin: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    background-size: cover;
+    background-image: url('resource/image/background.png');
+}
+
+/******** Menu Background Elements **********/
+
+.doughnut-border{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vh;
+    height: 50vh;
+    background-size: cover;
+    background-image: url('resource/image/doughnut_border.png');
+}
+
+.doughnut { 
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 45vh;
+    height: 45vh;
+    background-size: cover;
+    background-image: url('resource/image/doughnut.png');
+}
+
+.home-bg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 31vh;
+    height: 31vh;
+    background: rgba(255,255,255,0.6);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+/******* Menu Title & Descriptions *********/
+
+.home-half{
+    position: relative;
+    width:50%;
+    padding: 1vh;
+}
+
+.title{
+    font-size: large;
+    font-weight: 700;
+}
+
+.description{
+    font-size: small;
+    font-weight: 400;
+}
+
+#left{
+    text-align: right;
+}
+
+span
+{
+    line-height: normal;
+    display:inline-block;
+    vertical-align: middle;
+}
+
+/******** Explore Button ********/
+
+svg{
+    line-height:normal;
+    vertical-align: middle;
+}
+
+button{
+    margin-top: 1vh;
+    width: 70%;
+    border-radius: 1vh;
+    border-style: none;
+    text-align: center;
+    justify-content: center;
+    vertical-align: middle;
+    box-shadow: 0.1vh 0.2vh 0.5vh rgba(0, 0, 0, 0.445);
+    display: flex;
+    font-size: smaller;
+    transition-duration: 0.35s;
+    cursor:pointer;
+}
+
+button:hover path{
+    transition-duration: 0.35s;
+    fill: rgb(87, 106, 10);
+}
+
+button:hover {
+    background-color: #e8f9c1; /* Green */
+    color: rgb(87, 106, 10)
 }
