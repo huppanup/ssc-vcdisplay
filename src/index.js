@@ -33,17 +33,19 @@ function Icon(props) {
       console.log("EXPLORE")
       return (
         <div className='home-bg'>
-          <div id="left" className='home-half'>
-            <span className='title'>DISCO</span>
-            <span className='description'>Dynamic Intersection System Control Optimization</span>
+          
+          <div id="left" className='sub-left' tabIndex={1}>
+            <span className='sub title'>DISCO</span>
+            <span className='sub description'><span>Dynamic&nbsp;</span><span>Intersection&nbsp;</span><span>System&nbsp;</span><span>Control&nbsp;</span><span>Optimization</span></span>
           </div>
           <div className='v-divider'></div>
-          <div id="right" className='home-half'>
-            <span className='title'>MATSim</span>
-            <span className='description'>Multi-agent Transport Simulation</span>
-            {/* Button for testing only */}
+          <div id="right" className='sub-right' tabIndex={2}>
+            <span className='sub title'>MAT<span className='sub-title' style={{fontSize: 'smaller'}}>Sim</span></span>
+            <span className='sub description'><span>Multi-agent&nbsp;</span><span>Transport&nbsp;</span><span>Simulation</span></span>
+            {/* Button for testing only. Returns to front */}
             <button onClick={() => this.props.onClick()}><Icon value="play"/>Explore</button>
           </div>
+          
         </div>
       );
     }
@@ -60,6 +62,7 @@ function Icon(props) {
     exploreMenu() {
       this.setState({isExplore: !this.state.isExplore});
       document.body.style.boxShadow = !this.state.isExplore? 'inset 0 0 0 100vmax rgba(255, 255, 255, 0.3)': '';
+      document.getElementById("filter").style.boxShadow = !this.state.isExplore? 'inset 0 0 0 100vmax rgba(255, 255, 255, 0.3)': '';
     }
 
     render() {

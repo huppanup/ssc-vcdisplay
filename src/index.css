@@ -12,6 +12,12 @@ body {
     background-image: url('resource/image/background.png');
 }
 
+#filter {
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+}
+
 #bg-video{
     position: fixed;
     right: 0;
@@ -20,7 +26,7 @@ body {
     min-height: 100%;
 }
 
-/******** Menu Background Elements **********/
+/******** Page Background Elements **********/
 
 @keyframes rotation{
     0% {
@@ -63,6 +69,8 @@ body {
     background-image: url('resource/image/doughnut.png');
 }
 
+/******** Menu Elements **********/
+
 .home-bg {
     position: absolute;
     left: 50%;
@@ -75,14 +83,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: black;
+    color: rgb(39, 39, 39);
 }
 
 .v-divider{
     border-left: 0.13vh solid rgb(65, 65, 65);
     height: 10vh;
-    left: 50%;
-    margin-left: -1px;
+    left: calc(50% + 0.065vh);
 }
 
 .ust-logo {
@@ -102,6 +109,67 @@ body {
     position: relative;
     width:50%;
     padding: 0.7vh;
+}
+
+.sub-left{
+    border-radius: 15.5vh 0% 0% 15.5vh;
+    padding: 0.7vh;
+    position: relative;
+    height: calc(31vh - 1.4vh);
+    width:31vh;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    color: rgb(58, 58, 58);
+}
+
+.sub-left:hover, .sub-left:focus{
+    background: rgba(255, 255, 255, 0.5);
+    color: #0766A4;
+    box-shadow: #0766A4 -0.8vh 0.0vh 0.8vh 0.5vh;
+    text-shadow: 0.2vh 0.15vh 0.2vh rgba(0, 0, 0, 0.2);
+}
+
+.sub-right:hover, .sub-right:focus {
+    background: rgba(255, 255, 255, 0.5);
+    color: #40AEA1;
+    box-shadow: #40AEA1 0.8vh 0.0vh 0.8vh 0.5vh;
+    text-shadow: 0.2vh 0.15vh 0.2vh rgba(0, 0, 0, 0.2);
+}
+
+.sub-right{
+    border-radius: 0% 15.5vh 15.5vh 0%;
+    position: relative;
+    padding: 0.7vh;
+    height: calc(31vh - 1.4vh);
+    width:31vh;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    color:rgb(58, 58, 58);
+}
+
+.sub span{
+    display: inline-block;
+}
+
+.sub span:first-letter{
+    font-weight:700;
+}
+
+.sub.title{
+    font-size: x-large;
+    font-weight: 700;
+    overflow: hidden;
+}
+
+.sub.description{
+    max-width: 100%;
+    /* flex-direction: column; */
+    /* flex-wrap: wrap; */
+    font-size: x-small;
+    font-weight: 400;
+    overflow:hidden;
 }
 
 .title{
@@ -144,6 +212,7 @@ button{
     font-size: smaller;
     transition-duration: 0.35s;
     cursor:pointer;
+    color:rgb(58, 58, 58);
 }
 
 button:hover path{
