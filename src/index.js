@@ -64,10 +64,11 @@ function Icon(props) {
 
     render() {
       return (
+        <div>
         <div className='doughnut-border'>
-        <div className="doughnut">
-            {this.state.isExplore? <Explore onClick={() => this.exploreMenu()}/>: <Home onClick={() => this.exploreMenu()}/>}
+        <div className="doughnut"></div>
         </div>
+        {this.state.isExplore? <Explore onClick={() => this.exploreMenu()}/>: <Home onClick={() => this.exploreMenu()}/>}
         </div>
       );
     }
