@@ -1,0 +1,83 @@
+{
+    "left": {
+        "buttons": [{
+                "title": "VISSIM 3D Simulation",
+                "video_src": "disco_video1.mov"
+            },
+            {
+                "title": "Measurement on Vehicle Travel Time",
+                "video_src": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+            },
+            {
+                "title": "Testing – Age Recognition Flow Count",
+                "video_src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+            },
+            {
+                "title": "Signalization Schemes",
+                "video_src": "disco_video4.mp4"
+            },
+            {
+                "title": "DISCO Sample",
+                "video_src": "disco_video5.mov"
+            },
+            {
+                "title": "Tai Tam Adaptive Control",
+                "video_src": "disco_photo6.png"
+            },
+            {
+                "title": "Signal Control Methods",
+                "video_src": "disco_photo7.png"
+            }
+        ],
+        "slides": [
+            "disco_slide1.jpg",
+            "disco_slide2.jpg",
+            "disco_slide3.jpg"
+        ]
+    },
+    "right": {
+        "buttons": [{
+                "title": "Full HK Network",
+                "video_src": "matsim_video1.mp4"
+            },
+            {
+                "title": "PM Nathan Road",
+                "video_src": "matsim_video2.mp4"
+            },
+            {
+                "title": "HK Island AM Peak",
+                "video_src": "matsim_video3.mp4"
+            },
+            {
+                "title": "Signalised Junctions",
+                "video_src": "matsim_video4.mp4"
+            },
+            {
+                "title": "MTR Network",
+                "video_src": "matsim_video5.mp4"
+            },
+            {
+                "title": "Analysis Demo Transfer",
+                "video_src": "matsim_video6.png"
+            },
+            {
+                "title": "Analysis Demo Vehicle Load",
+                "video_src": "matsim_video7.png"
+            },
+            {
+                "title": "Analysis Demo Aggregated Vehicle Load",
+                "video_src": "matsim_video8.png"
+            }
+        ],
+        "slides": [
+            "matsim_slide1.jpg",
+            "matsim_slide2.jpg",
+            "matsim_slide3.jpg",
+            "matsim_slide4.jpg",
+            "matsim_slide5.jpg",
+            "matsim_slide6.jpg",
+            "matsim_slide7.jpg",
+            "matsim_slide8.jpg"
+        ]
+    }
+}
