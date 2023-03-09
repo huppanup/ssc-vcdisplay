@@ -10,7 +10,8 @@ function Board() {
   const [selectedButton, setSelectedButton] = useState(-1);
 
   const [isPanelShown, setIsPanelShown] = useState(false);
-  const [isLeftSelected, setIsLeftSelected] = useState(true);
+  const [isLeftSelected, setIsLeftSelected] = useState(false);
+  const [isRightSelected, setIsRightSelected] = useState(false);
   const [selectedPanelData, setSelectedPanelData] = useState(null);
   // let selectedPanelData = isLeftSelected ? data.left : data.right;
 
@@ -19,7 +20,13 @@ function Board() {
 
   const showPanel = (isLeft) => {
     setIsPanelShown(true);
-    setIsLeftSelected(isLeft);
+    if(isLeft) {
+      setIsLeftSelected(true);
+      setIsRightSelected(false);
+    } else {
+      setIsLeftSelected(false);
+      setIsRightSelected(true);
+    }
     setSelectedPanelData(isLeft ? data.left : data.right);
     setSelectedButton(0);
   }
@@ -41,7 +48,7 @@ function Board() {
 
       </CSSTransition>
       <CSSTransition
-        in={!isLeftSelected}
+        in={isRightSelected}
         nodeRef={nodeRef2}
         timeout={5000}
         classNames="fade"
@@ -49,7 +56,7 @@ function Board() {
       >
         <div
           ref={nodeRef2}>
-          {isPanelShown && !isLeftSelected && (<Panel key={isLeftSelected ? 0 : 1} panel_data={selectedPanelData} isLeft={false} selectedButton={selectedButton} buttonClickHandler={(idx) => setSelectedButton(idx)} />)
+          {isPanelShown && isRightSelected && (<Panel key={isRightSelected ? 0 : 1} panel_data={selectedPanelData} isLeft={false} selectedButton={selectedButton} buttonClickHandler={(idx) => setSelectedButton(idx)} />)
           }
         </div>
       </CSSTransition>
