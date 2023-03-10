@@ -183,11 +183,10 @@ function Doughnut({ onClickHandler }) {
   return (
     <>
       <div className='doughnut-border'>
-
-      </div>
       <div className="doughnut">
-        {isExplore ? <Explore onClick={() => exploreMenu()} onClickHandler={(isLeft) => onClickHandler(isLeft)} /> : <Home onClick={() => exploreMenu()} />}
       </div>
+      </div>
+      {isExplore ? <Explore onClick={() => exploreMenu()} onClickHandler={(isLeft) => onClickHandler(isLeft)} /> : <Home onClick={() => exploreMenu()} />}
     </>
   );
 }
