@@ -29,6 +29,20 @@ body {
 
 /******** Page Background Elements **********/
 
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        animation-timing-function: ease;
+    } 
+    100%{
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fade-in 2s ease-in;
+}
+
 @keyframes rotation {
     0% {
         transform: rotate(0deg);
@@ -141,7 +155,8 @@ body {
 }
 
 .sub-left:hover,
-.sub-left:focus {
+.sub-left:focus,
+.sub-left.active {
     background: rgba(255, 255, 255, 0.5);
     color: #0766A4;
     box-shadow: #0766A4 -0.8vh 0.0vh 0.8vh 0.5vh;
@@ -149,7 +164,8 @@ body {
 }
 
 .sub-right:hover,
-.sub-right:focus {
+.sub-right:focus,
+.sub-right.active {
     background: rgba(255, 255, 255, 0.5);
     color: #40AEA1;
     box-shadow: #40AEA1 0.8vh 0.0vh 0.8vh 0.5vh;
@@ -319,8 +335,8 @@ button.button-selected {
 
 .fade-enter.fade-enter-active {
     opacity: 1;
-    transition: opacity 500ms ease-out;
-    transition-delay: 500ms;
+    transition: opacity 600ms ease-out;
+    transition-delay: 100ms;
 }
 
 .fade-leave {
@@ -329,5 +345,5 @@ button.button-selected {
 
 .fade-leave.fade-leave-active {
     opacity: 0;
-    transition: opacity 500ms ease-in;
+    transition: opacity 600ms ease-in;
 }

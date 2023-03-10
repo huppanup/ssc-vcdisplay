@@ -21,9 +21,13 @@ function Board() {
   const showPanel = (isLeft) => {
     setIsPanelShown(true);
     if(isLeft) {
+      document.getElementById('right').classList.remove('active');
+      document.getElementById('left').classList.add('active');
       setIsLeftSelected(true);
       setIsRightSelected(false);
     } else {
+      document.getElementById('left').classList.remove('active');
+      document.getElementById('right').classList.add('active');
       setIsLeftSelected(false);
       setIsRightSelected(true);
     }
@@ -156,8 +160,9 @@ class Home extends React.Component {
 }
 
 function Explore({ onClickHandler = f => f }) {
+  
   return (
-    <div className='home-bg'>
+    <div className='home-bg fade-in'>
       <div id="left" className='sub-left' tabIndex={1} onClick={() => onClickHandler(true)}>
         <span className='sub title'>DISCO</span>
         <span className='sub description'><span>Dynamic&nbsp;</span><span>Intersection&nbsp;</span><span>System&nbsp;</span><span>Control&nbsp;</span><span>Optimization</span></span>
@@ -177,7 +182,9 @@ function Doughnut({ onClickHandler }) {
 
   const exploreMenu = () => {
     setIsExplore(!isExplore);
-    document.body.style.boxShadow = !isExplore ? 'inset 0 0 0 100vmax rgba(255, 255, 255, 0.3)' : '';
+    document.getElementById('filter').style.boxShadow = !isExplore ? 'inset 0 0 0 100vmax rgba(255, 255, 255, 0.3)' : '';
+    document.getElementById('filter').classList.add('fade-in');
+    
   }
 
   return (
@@ -186,7 +193,9 @@ function Doughnut({ onClickHandler }) {
       <div className="doughnut">
       </div>
       </div>
-      {isExplore ? <Explore onClick={() => exploreMenu()} onClickHandler={(isLeft) => onClickHandler(isLeft)} /> : <Home onClick={() => exploreMenu()} />}
+      {isExplore ? 
+      <Explore onClick={() => exploreMenu()} onClickHandler={(isLeft) => onClickHandler(isLeft)} />: 
+      <Home onClick={() => exploreMenu()} />}
     </>
   );
 }
