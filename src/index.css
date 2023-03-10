@@ -29,6 +29,38 @@ body {
 
 /******** Page Background Elements **********/
 
+@keyframes change-left-color {
+    0% {
+        background: rgba(255, 255, 255, 0);
+        color: rgb(58,58,58);
+        box-shadow: #0765a400 -0.8vh 0.0vh 0.8vh 0.5vh;
+        text-shadow: 0.2vh 0.15vh 0.2vh rgba(0, 0, 0, 0);
+        animation-timing-function: ease;
+    } 
+    100%{
+        background: rgba(255, 255, 255, 0.5);
+        color: #0766A4;
+        box-shadow: #0766A4 -0.8vh 0.0vh 0.8vh 0.5vh;
+        text-shadow: 0.2vh 0.15vh 0.2vh rgba(0, 0, 0, 0.2);
+    }
+}
+
+@keyframes change-right-color {
+    0% {
+        background: rgba(255, 255, 255, 0);
+        color: rgb(58,58,58);
+        box-shadow: #40AEA1 0.8vh 0.0vh 0.8vh 0.5vh;
+        text-shadow: 0.2vh 0.15vh 0.2vh rgba(0, 0, 0, 0);
+        animation-timing-function: ease;
+    } 
+    100%{
+        background: rgba(255, 255, 255, 0.5);
+        color: #40AEA1;
+        box-shadow: #40AEA1 0.8vh 0.0vh 0.8vh 0.5vh;
+        text-shadow: 0.2vh 0.15vh 0.2vh rgba(0, 0, 0, 0.2);
+    }
+}
+
 @keyframes fade-in {
     0% {
         opacity: 0;
@@ -161,6 +193,7 @@ body {
     color: #0766A4;
     box-shadow: #0766A4 -0.8vh 0.0vh 0.8vh 0.5vh;
     text-shadow: 0.2vh 0.15vh 0.2vh rgba(0, 0, 0, 0.2);
+    animation: change-left-color 0.2s linear;
 }
 
 .sub-right:hover,
@@ -170,6 +203,7 @@ body {
     color: #40AEA1;
     box-shadow: #40AEA1 0.8vh 0.0vh 0.8vh 0.5vh;
     text-shadow: 0.2vh 0.15vh 0.2vh rgba(0, 0, 0, 0.2);
+    animation: change-right-color 0.2s linear;
 }
 
 .sub-right {
