@@ -6,10 +6,10 @@
             },
             {
                 "title": "Measurement on Vehicle Travel Time",
-                "video_src": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+                "video_src": "disco_video2.png"
             },
             {
-                "title": "Testing – Age Recognition Flow Count",
+                "title": "Testing – Image Recognition Flow Count",
                 "video_src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
             },
             {
@@ -30,9 +30,9 @@
             }
         ],
         "slides": [
-            "disco_slide1.jpg",
-            "disco_slide2.jpg",
-            "disco_slide3.jpg"
+            "disco_slide1.png",
+            "disco_slide2.png",
+            "disco_slide3.png"
         ]
     },
     "right": {
@@ -70,14 +70,14 @@
             }
         ],
         "slides": [
-            "matsim_slide1.jpg",
-            "matsim_slide2.jpg",
-            "matsim_slide3.jpg",
-            "matsim_slide4.jpg",
-            "matsim_slide5.jpg",
-            "matsim_slide6.jpg",
-            "matsim_slide7.jpg",
-            "matsim_slide8.jpg"
+            "matsim_slide1.png",
+            "matsim_slide2.png",
+            "matsim_slide3.png",
+            "matsim_slide4.png",
+            "matsim_slide5.png",
+            "matsim_slide6.png",
+            "matsim_slide7.png",
+            "matsim_slide8.png"
         ]
     }
 }
