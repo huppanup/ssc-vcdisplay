@@ -263,7 +263,7 @@ button:hover {
 /******** Video Element ********/
 
 .video-container {
-    top: -2%;
+    top: -5%;
     left: 5%;
     width: 90%;
     padding-top: 56.25%;
@@ -327,6 +327,10 @@ button.button-selected {
     font-size: 20px;
     background: #efefef;
     text-align: center;
+}
+
+ul.indicators {
+    padding-inline-start: 0px;
 }
 
 /******* Animatino for Panel ********/
