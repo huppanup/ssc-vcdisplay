@@ -297,6 +297,7 @@ button.panel {
     font-weight: 400;
     font-size: 1.1vh;
     line-height: 95%;
+    font-family: 'muli';
     /* or 16px */
 
     text-align: center;
