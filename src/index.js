@@ -77,9 +77,9 @@ function Panel({ panel_data, isLeft, selectedButton, buttonClickHandler }) {
   return (
     <div style={{
       position: "absolute",
-      width: "45%",
+      width: "44.4vh",
       height: "90%",
-      left: isLeft ? "5%" : "50%",
+      left: isLeft ? "calc(50% - 44.4vh)" : "50%",
       top: "5%",
       // opacity: 0
       // display: "none"
