@@ -6,6 +6,7 @@ import 'react-slideshow-image/dist/styles.css';
 import data from "./data.json";
 import { CSSTransition } from 'react-transition-group';
 
+
 function Board() {
   const [selectedButton, setSelectedButton] = useState(-1);
 
@@ -160,6 +161,19 @@ class Home extends React.Component {
 }
 
 function Explore({ onClickHandler = f => f }) {
+  var timeoutID = setTimeout(refreshPage, 120000);
+
+  function refreshPage(){
+    window.location.reload();
+  }
+
+  function resetTimer(){
+    clearTimeout(timeoutID);
+    timeoutID = setTimeout(refreshPage, 120000);
+  }
+
+  document.addEventListener("mousemove", resetTimer);
+  document.addEventListener("click", resetTimer);
   
   return (
     <div className='home-bg fade-in'>
