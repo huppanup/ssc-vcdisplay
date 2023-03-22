@@ -160,22 +160,21 @@ class Home extends React.Component {
   }
 }
 
-function Explore({ onClickHandler = f => f }) {
-  var timeoutID = setTimeout(refreshPage, 120000);
+function Explore({ onClick = f => f, onClickHandler = f => f }) {
+  var timeoutID = setTimeout(onClick, 120000);
 
-  function refreshPage(){
-    window.location.reload();
-  }
 
   function resetTimer(){
     clearTimeout(timeoutID);
-    timeoutID = setTimeout(refreshPage, 120000);
+    timeoutID = setTimeout(onClick, 120000);
   }
 
   document.addEventListener("mousemove", resetTimer);
   document.addEventListener("click", resetTimer);
+  console.log(onClick, onClickHandler);
   
   return (
+    <>
     <div className='home-bg fade-in'>
       <div id="left" className='sub-left' tabIndex={1} onClick={() => onClickHandler(true)}>
         <span className='sub title'>DISCO</span>
@@ -188,6 +187,8 @@ function Explore({ onClickHandler = f => f }) {
         {/* Button for testing only */}
       </div>
     </div>
+    <div id="home-button" onClick={() => onClick()}><img id="home-icon" src={require("./resource/image/ico_home.png")}></img></div>
+    </>
   );
 }
 
