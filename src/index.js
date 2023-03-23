@@ -19,8 +19,8 @@ function Board() {
   const nodeRef = useRef(null);
   const nodeRef2 = useRef(null);
 
-  const showPanel = (isLeft) => {
-    setIsPanelShown(true);
+  const showPanel = (isPanel, isLeft) => {
+    setIsPanelShown(isPanel);
     if(isLeft) {
       document.getElementById('right').classList.remove('active');
       document.getElementById('left').classList.add('active');
@@ -38,7 +38,7 @@ function Board() {
 
   return (
     <>
-      <Doughnut onClickHandler={(isLeft) => showPanel(isLeft)} />
+      <Doughnut onClickHandler={(isPanel, isLeft) => showPanel(isPanel, isLeft)} />
       <CSSTransition
         in={isLeftSelected}
         nodeRef={nodeRef}
@@ -130,7 +130,7 @@ function Panel({ panel_data, isLeft, selectedButton, buttonClickHandler }) {
           }
         </Slide>
       </div>
-    </div >
+    </div>
   );
 }
 
@@ -171,23 +171,22 @@ function Explore({ onClick = f => f, onClickHandler = f => f }) {
 
   document.addEventListener("mousemove", resetTimer);
   document.addEventListener("click", resetTimer);
-  console.log(onClick, onClickHandler);
   
   return (
     <>
     <div className='home-bg fade-in'>
-      <div id="left" className='sub-left' tabIndex={1} onClick={() => onClickHandler(true)}>
+      <div id="left" className='sub-left' tabIndex={1} onClick={() => onClickHandler(true, true)}>
         <span className='sub title'>DISCO</span>
         <span className='sub description'><span>Dynamic&nbsp;</span><span>Intersection&nbsp;</span><span>System&nbsp;</span><span>Control&nbsp;</span><span>Optimization</span></span>
       </div>
       <div className='v-divider'></div>
-      <div id="right" className='sub-right' tabIndex={2} onClick={() => onClickHandler(false)}>
+      <div id="right" className='sub-right' tabIndex={2} onClick={() => onClickHandler(true, false)}>
         <span className='sub title'>MAT<span className='sub-title' style={{ fontSize: 'smaller' }}>Sim</span></span>
         <span className='sub description'><span>Multi-agent&nbsp;</span><span>Transport&nbsp;</span><span>Simulation</span></span>
         {/* Button for testing only */}
       </div>
     </div>
-    <div id="home-button" onClick={() => onClick()}><img id="home-icon" src={require("./resource/image/ico_home.png")}></img></div>
+    <div id="home-button" onClick={() => {onClick(); onClickHandler(false, true);}}><img id="home-icon" src={require("./resource/image/ico_home.png")}></img></div>
     </>
   );
 }
@@ -209,7 +208,7 @@ function Doughnut({ onClickHandler }) {
       </div>
       </div>
       {isExplore ? 
-      <Explore onClick={() => exploreMenu()} onClickHandler={(isLeft) => onClickHandler(isLeft)} />: 
+      <Explore onClick={() => exploreMenu()} onClickHandler={(isPanel, isLeft) => onClickHandler(isPanel, isLeft)} />: 
       <Home onClick={() => exploreMenu()} />}
     </>
   );
