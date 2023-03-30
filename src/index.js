@@ -4,6 +4,7 @@ import './index.css';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import data from "./data.json";
+import data_cn from "./data_cn.json"
 import { CSSTransition } from 'react-transition-group';
 
 function Board() {
@@ -13,6 +14,21 @@ function Board() {
   const [isLeftSelected, setIsLeftSelected] = useState(false);
   const [isRightSelected, setIsRightSelected] = useState(false);
   const [selectedPanelData, setSelectedPanelData] = useState(null);
+  const [selectedLanguage, setLanguage] = useState('en');
+
+  const toggleLanguage = () => {
+    if (selectedLanguage === 'en') {
+      setLanguage('cn');
+      setSelectedPanelData(isLeftSelected ? data_cn.left : data_cn.right);
+    } else {
+      setLanguage('en');
+      setSelectedPanelData(isLeftSelected ? (data.left) : (data.right));
+    }
+  }
+
+  // useEffect(() => {
+
+  // }, [selectedLanguage])
   // let selectedPanelData = isLeftSelected ? data.left : data.right;
 
   const nodeRef = useRef(null);
@@ -20,7 +36,7 @@ function Board() {
 
   const showPanel = (isLeft) => {
     setIsPanelShown(true);
-    if(isLeft) {
+    if (isLeft) {
       document.getElementById('right').classList.remove('active');
       document.getElementById('left').classList.add('active');
       setIsLeftSelected(true);
@@ -31,13 +47,13 @@ function Board() {
       setIsLeftSelected(false);
       setIsRightSelected(true);
     }
-    setSelectedPanelData(isLeft ? data.left : data.right);
+    setSelectedPanelData(isLeft ? (selectedLanguage === "en" ? data.left : data_cn.left) : (selectedLanguage === "en" ? data.right : data_cn.right));
     setSelectedButton(0);
   }
 
   return (
     <>
-      <Doughnut onClickHandler={(isLeft) => showPanel(isLeft)} />
+      <Doughnut onClickHandler={(isLeft) => showPanel(isLeft)} lang={selectedLanguage} />
       <CSSTransition
         in={isLeftSelected}
         nodeRef={nodeRef}
@@ -45,8 +61,8 @@ function Board() {
         classNames="fade"
         unmountOnExit
       >
-        <div ref={nodeRef}>
-          {isPanelShown && isLeftSelected && (<Panel key={isLeftSelected ? 0 : 1} panel_data={selectedPanelData} isLeft={true} selectedButton={selectedButton} buttonClickHandler={(idx) => setSelectedButton(idx)} />)
+        <div ref={nodeRef} key={selectedLanguage}>
+          {isPanelShown && isLeftSelected && (<Panel key={isLeftSelected ? (selectedLanguage === 'en' ? 0 : 1) : (selectedLanguage === 'en' ? 2 : 3)} panel_data={selectedPanelData} isLeft={true} selectedButton={selectedButton} buttonClickHandler={(idx) => setSelectedButton(idx)} lang={selectedLanguage} />)
           }
         </div>
 
@@ -59,16 +75,28 @@ function Board() {
         unmountOnExit
       >
         <div
-          ref={nodeRef2}>
-          {isPanelShown && isRightSelected && (<Panel key={isRightSelected ? 0 : 1} panel_data={selectedPanelData} isLeft={false} selectedButton={selectedButton} buttonClickHandler={(idx) => setSelectedButton(idx)} />)
+          ref={nodeRef2} key={selectedLanguage}>
+          {isPanelShown && isRightSelected && (<Panel key={isRightSelected ? (selectedLanguage === 'en' ? 0 : 1) : (selectedLanguage === 'en' ? 2 : 3)} panel_data={selectedPanelData} isLeft={false} selectedButton={selectedButton} buttonClickHandler={(idx) => setSelectedButton(idx)} lang={selectedLanguage} />)
           }
         </div>
       </CSSTransition>
+      <TranslateButton toggle={() => toggleLanguage()} lang={selectedLanguage} />
+
     </>
   )
 }
 
-function Panel({ panel_data, isLeft, selectedButton, buttonClickHandler }) {
+function TranslateButton({ lang, toggle }) {
+  return (
+    <div key={lang} style={{ position: 'absolute', bottom: '2%', right: '2%' }} onClick={() => toggle()}>
+      <img src={lang === "cn" ? "cn_selected.svg" : "cn.svg"} style={{ height: "2.8vh", marginRight: '2vh' }} alt={lang === "cn" ? "cn_selected.svg" : "cn.svg"} />
+      <img src="bar.svg" style={{ height: "2.8vh", marginRight: '2vh' }} alt="bar.svg" />
+      <img src={lang === "en" ? "en_selected.svg" : "en.svg"} style={{ height: "2.5vh" }} alt={lang === "en" ? "en_selected.svg" : "en.svg"} />
+    </div >
+  );
+}
+
+function Panel({ panel_data, isLeft, selectedButton, buttonClickHandler, lang }) {
   const [videoSrc, setVideoSrc] = useState(panel_data.buttons[0].video_src);
 
   const images = panel_data.slides;
@@ -95,11 +123,11 @@ function Panel({ panel_data, isLeft, selectedButton, buttonClickHandler }) {
         flexWrap: "wrap",
         position: "absolute",
         top: "23.5%"
-      }}>
+      }}
+      >
         {
           panel_data.buttons.map((button, i) => (
             <button className={i === selectedButton ? "panel button-selected" : "panel"} key={i} onClick={() => {
-              // alert(button.video_src)
               buttonClickHandler(i);
               setVideoSrc(button.video_src)
             }} style={{
@@ -141,61 +169,66 @@ function Icon(props) {
   );
 }
 
-class Home extends React.Component {
+// class Home extends React.Component {
 
-  render() {
-    return (
-      <div className='home-bg'>
-        <div id="left" className='home-half title'>
-          <span>Smart</span>
-          <span style={{ fontSize: '80%' }}>Trasnportation</span>
-        </div>
-        <div id="right" className='home-half description'>
-          <span> How does traffic control & large scale simulation innovate network planning?</span>
-          <button onClick={() => this.props.onClick()}><Icon value="play" />Explore</button>
-        </div>
+//   render() {
+
+//   }
+// }
+
+function Home({ onClick, lang }) {
+  const data_lang = lang === "en" ? data : data_cn;
+  return (
+    <div className='home-bg'>
+      <div id="left" className='home-half title'>
+        <span>{data_lang.home.init_left_top}</span>
+        <span style={{ fontSize: '80%' }}>{data_lang.home.init_left_bottom}</span>
       </div>
-    );
-  }
+      <div id="right" className='home-half description'>
+        <span> {data_lang.home.init_right}</span>
+        <button onClick={() => onClick()}><Icon value="play" />{data_lang.home.init_right_button}</button>
+      </div>
+    </div>
+  );
 }
 
-function Explore({ onClickHandler = f => f }) {
-  
+function Explore({ onClickHandler = f => f, lang }) {
+  const data_lang = lang === "en" ? data : data_cn;
   return (
     <div className='home-bg fade-in'>
       <div id="left" className='sub-left' tabIndex={1} onClick={() => onClickHandler(true)}>
         <span className='sub title'>DISCO</span>
-        <span className='sub description'><span>Dynamic&nbsp;</span><span>Intersection&nbsp;</span><span>System&nbsp;</span><span>Control&nbsp;</span><span>Optimization</span></span>
+        <span className='sub description'><span>{data_lang.disco.line1}&nbsp;</span><span>{data_lang.disco.line2}&nbsp;</span><span>{data_lang.disco.line3}&nbsp;</span><span>{data_lang.disco.line4}&nbsp;</span><span>{data_lang.disco.line5}</span></span>
       </div>
       <div className='v-divider'></div>
       <div id="right" className='sub-right' tabIndex={2} onClick={() => onClickHandler(false)}>
         <span className='sub title'>MAT<span className='sub-title' style={{ fontSize: 'smaller' }}>Sim</span></span>
-        <span className='sub description'><span>Multi-agent&nbsp;</span><span>Transport&nbsp;</span><span>Simulation</span></span>
+        <span className='sub description'><span>{data_lang.matsim.line1}&nbsp;</span><span>{data_lang.matsim.line2}&nbsp;</span><span>{data_lang.matsim.line3}</span></span>
         {/* Button for testing only */}
       </div>
     </div>
   );
 }
 
-function Doughnut({ onClickHandler }) {
+function Doughnut({ onClickHandler, lang }) {
   const [isExplore, setIsExplore] = useState(false);
 
   const exploreMenu = () => {
     setIsExplore(!isExplore);
     document.getElementById('filter').style.boxShadow = !isExplore ? 'inset 0 0 0 100vmax rgba(255, 255, 255, 0.3)' : '';
     document.getElementById('filter').classList.add('fade-in');
-    
+
   }
 
   return (
     <>
       <div className='doughnut-border'>
-      <div className="doughnut">
+        <div className="doughnut">
+        </div>
       </div>
-      </div>
-      {isExplore ? 
-      <Explore onClick={() => exploreMenu()} onClickHandler={(isLeft) => onClickHandler(isLeft)} />: 
-      <Home onClick={() => exploreMenu()} />}
+      {isExplore ?
+        <Explore onClick={() => exploreMenu()} onClickHandler={(isLeft) => onClickHandler(isLeft)} lang={lang} /> :
+        <Home onClick={() => exploreMenu()} lang={lang} />}
     </>
   );
 }

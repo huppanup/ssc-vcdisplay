@@ -1,31 +1,31 @@
 {
     "left": {
         "buttons": [{
-                "title": "VISSIM 3D Simulation",
+                "title": "VISSIM 3D 仿真",
                 "video_src": "disco_video1.mov"
             },
             {
-                "title": "Measurement on Vehicle Travel Time",
+                "title": "测量时间 车辆行程时间",
                 "video_src": "disco_video2.png"
             },
             {
-                "title": "Testing – Image Recognition Flow Count",
+                "title": "测试——年龄 识别流量计数",
                 "video_src": "disco_video3.mp4"
             },
             {
-                "title": "Signalization Schemes",
+                "title": "信号化方案",
                 "video_src": "disco_video4.mp4"
             },
             {
-                "title": "DISCO Sample",
+                "title": "DISCO 样本",
                 "video_src": "disco_video5.mov"
             },
             {
-                "title": "Tai Tam Adaptive Control",
+                "title": "大潭自适应控制",
                 "video_src": "disco_photo6.png"
             },
             {
-                "title": "Signal Control Methods",
+                "title": "信号控制方法",
                 "video_src": "disco_photo7.png"
             }
         ],
@@ -37,35 +37,35 @@
     },
     "right": {
         "buttons": [{
-                "title": "Full HK Network",
+                "title": "全香港网络",
                 "video_src": "matsim_video1.mp4"
             },
             {
-                "title": "PM Nathan Road",
+                "title": "弥敦道 - 下午",
                 "video_src": "matsim_video2.mp4"
             },
             {
-                "title": "HK Island AM Peak",
+                "title": "香港岛 上午 - 高峰时间",
                 "video_src": "matsim_video3.mp4"
             },
             {
-                "title": "Signalised Junctions",
+                "title": "信号化路口",
                 "video_src": "matsim_video4.mp4"
             },
             {
-                "title": "MTR Network",
+                "title": "港铁网络",
                 "video_src": "matsim_video5.mp4"
             },
             {
-                "title": "Analysis Demo Transfer",
+                "title": "分析演示转移",
                 "video_src": "matsim_video6.png"
             },
             {
-                "title": "Analysis Demo Vehicle Load",
+                "title": "分析演示 车辆负载",
                 "video_src": "matsim_video7.png"
             },
             {
-                "title": "Analysis Demo Aggregated Vehicle Load",
+                "title": "分析演示 聚合车辆负载",
                 "video_src": "matsim_video8.png"
             }
         ],
@@ -81,21 +81,21 @@
         ]
     },
     "home": {
-        "init_left_top": "Smart",
-        "init_left_bottom": "Trasnportation",
-        "init_right": "How does traffic control & large scale simulation innovate network planning?",
-        "init_right_button": "Explore"
+        "init_left_top": "智慧交通",
+        "init_left_bottom": "",
+        "init_right": "流量控制和大规模仿真如何创新网络规划？",
+        "init_right_button": "浏览"
     },
     "disco": {
-        "line1": "Dynamic",
-        "line2": "Intersection",
-        "line3": "System",
-        "line4": "Control",
-        "line5": "Optimization"
+        "line1": "动态交叉路口",
+        "line2": "系统控制优化",
+        "line3": "",
+        "line4": "",
+        "line5": ""
     },
     "matsim": {
-        "line1": "Multi-agent",
-        "line2": "Transport",
-        "line3": "Simulation"
+        "line1": "大型交通流",
+        "line2": "仿真平台",
+        "line3": ""
     }
 }
