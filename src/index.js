@@ -98,9 +98,9 @@ function TranslateButton({ lang, toggle }) {
 
 function Panel({ panel_data, isLeft, selectedButton, buttonClickHandler, lang }) {
   const [videoSrc, setVideoSrc] = useState(panel_data.buttons[0].video_src);
-
+  
   const images = panel_data.slides;
-
+  console.log(images);
   const reg_video = /\.(mov|mp4)/i;
   return (
     <div style={{
