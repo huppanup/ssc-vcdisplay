@@ -65,8 +65,9 @@ body {
     0% {
         opacity: 0;
         animation-timing-function: ease;
-    } 
-    100%{
+    }
+
+    100% {
         opacity: 1;
     }
 }
@@ -387,15 +388,15 @@ ul.indicators {
     transition: opacity 600ms ease-in;
 }
 
-#home-button{
+#home-button {
     position: absolute;
     left: 2vh;
     bottom: 2vh;
-    width:4vh;
+    width: 4vh;
     height: 4vh;
 }
 
-#home-icon{ 
+#home-icon {
     max-width: 100%;
     max-height: 100%;
     opacity: 0.8;

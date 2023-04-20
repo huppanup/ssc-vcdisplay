@@ -6,8 +6,7 @@ import 'react-slideshow-image/dist/styles.css';
 import data from "./data.json";
 import data_cn from "./data_cn.json"
 import { CSSTransition } from 'react-transition-group';
-
-
+import HomeIcon from "./resource/image/ico_home.png";
 function Board() {
   const [selectedButton, setSelectedButton] = useState(-1);
 
@@ -35,8 +34,8 @@ function Board() {
   const nodeRef = useRef(null);
   const nodeRef2 = useRef(null);
 
-  const showPanel = (isLeft) => {
-    setIsPanelShown(true);
+  const showPanel = (isPanel, isLeft) => {
+    setIsPanelShown(isPanel);
     if (isLeft) {
       document.getElementById('right').classList.remove('active');
       document.getElementById('left').classList.add('active');
@@ -193,32 +192,41 @@ function Home({ onClick, lang }) {
   );
 }
 
-function Explore({ onClickHandler = f => f, onClickHandler = f => f,lang }) {
-  var timeoutID = setTimeout(onClick, 120000);
+function Explore({ onClick = f => f, onClickHandler = f => f, lang }) {
+  let timeoutID = setTimeout(onClick, 120000);
 
-  function resetTimer(){
+  function refreshPage() {
+    window.location.reload();
+  }
+
+  function resetTimer() {
     clearTimeout(timeoutID);
     timeoutID = setTimeout(onClick, 120000);
   }
+
+  document.addEventListener("mousemove", resetTimer);
+  document.addEventListener("click", resetTimer);
+
   const data_lang = lang === "en" ? data : data_cn;
   document.addEventListener("mousemove", resetTimer);
   document.addEventListener("click", resetTimer);
   return (
     <>
-    <div className='home-bg fade-in'>
-      <div id="left" className='sub-left' tabIndex={1} onClick={() => onClickHandler(true, true)}>
-        <span className='sub title'>DISCO</span>
-        <span className='sub description'><span>{data_lang.disco.line1}&nbsp;</span><span>{data_lang.disco.line2}&nbsp;</span><span>{data_lang.disco.line3}&nbsp;</span><span>{data_lang.disco.line4}&nbsp;</span><span>{data_lang.disco.line5}</span></span>
+      <div className='home-bg fade-in'>
+        <div id="left" className='sub-left' tabIndex={1} onClick={() => onClickHandler(true, true)}>
+          <span className='sub title'>DISCO</span>
+          <span className='sub description'><span>{data_lang.disco.line1}&nbsp;</span><span>{data_lang.disco.line2}&nbsp;</span><span>{data_lang.disco.line3}&nbsp;</span><span>{data_lang.disco.line4}&nbsp;</span><span>{data_lang.disco.line5}</span></span>
+        </div>
+        <div className='v-divider'></div>
+        <div id="right" className='sub-right' tabIndex={2} onClick={() => onClickHandler(true, false)}>
+          <span className='sub title'>MAT<span className='sub-title' style={{ fontSize: 'smaller' }}>Sim</span></span>
+          <span className='sub description'><span>{data_lang.matsim.line1}&nbsp;</span><span>{data_lang.matsim.line2}&nbsp;</span><span>{data_lang.matsim.line3}</span></span>
+          {/* Button for testing only */}
+        </div>
       </div>
-      <div className='v-divider'></div>
-      <div id="right" className='sub-right' tabIndex={2} onClick={() => onClickHandler(true, false)}>
-        <span className='sub title'>MAT<span className='sub-title' style={{ fontSize: 'smaller' }}>Sim</span></span>
-        <span className='sub description'><span>{data_lang.matsim.line1}&nbsp;</span><span>{data_lang.matsim.line2}&nbsp;</span><span>{data_lang.matsim.line3}</span></span>
-        {/* Button for testing only */}
-      </div>
-    </div>
-    <div id="home-button" onClick={() => {onClick(); onClickHandler(false, true);}}><img id="home-icon" src={require("./resource/image/ico_home.png")}></img></div>
+      <div id="home-button" onClick={() => {onClick(); onClickHandler(false, true) }}><img id="home-icon" src={HomeIcon} alt="home" /></div>
     </>
+
   );
 }
 
