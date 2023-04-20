@@ -30,9 +30,9 @@
             }
         ],
         "slides": [
-            "disco_slide1.png",
-            "disco_slide2.png",
-            "disco_slide3.png"
+            "disco_slide1_cn.png",
+            "disco_slide2_cn.png",
+            "disco_slide3_cn.png"
         ]
     },
     "right": {
@@ -70,14 +70,14 @@
             }
         ],
         "slides": [
-            "matsim_slide1.png",
-            "matsim_slide2.png",
-            "matsim_slide3.png",
-            "matsim_slide4.png",
-            "matsim_slide5.png",
-            "matsim_slide6.png",
-            "matsim_slide7.png",
-            "matsim_slide8.png"
+            "matsim_slide1_cn.png",
+            "matsim_slide2_cn.png",
+            "matsim_slide3_cn.png",
+            "matsim_slide4_cn.png",
+            "matsim_slide5_cn.png",
+            "matsim_slide6_cn.png",
+            "matsim_slide7_cn.png",
+            "matsim_slide8_cn.png"
         ]
     },
     "home": {
