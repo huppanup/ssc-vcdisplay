@@ -35,7 +35,16 @@ function Board() {
   const nodeRef2 = useRef(null);
 
   const showPanel = (isPanel, isLeft) => {
+    console.log("Show explore panels : " + isPanel);
+    console.log("Is left panel : " + isLeft);
     setIsPanelShown(isPanel);
+    if (!isPanel){
+      document.getElementById('right').classList.remove('active');
+      document.getElementById('left').classList.remove('active');
+      setIsLeftSelected(false);
+      setIsRightSelected(false);
+      return;
+    }
     if (isLeft) {
       document.getElementById('right').classList.remove('active');
       document.getElementById('left').classList.add('active');
@@ -193,15 +202,11 @@ function Home({ onClick, lang }) {
 }
 
 function Explore({ onClick = f => f, onClickHandler = f => f, lang }) {
-  let timeoutID = setTimeout(onClick, 120000);
-
-  function refreshPage() {
-    window.location.reload();
-  }
+  let timeoutID = setTimeout(function(){onClick(); onClickHandler(false, true);}, 120000);
 
   function resetTimer() {
     clearTimeout(timeoutID);
-    timeoutID = setTimeout(onClick, 120000);
+    timeoutID = setTimeout(function(){onClick(); onClickHandler(false, true);}, 120000);
   }
 
   document.addEventListener("mousemove", resetTimer);
