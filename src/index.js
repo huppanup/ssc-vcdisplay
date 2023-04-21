@@ -142,7 +142,7 @@ function Panel({ panel_data, isLeft, selectedButton, buttonClickHandler, lang })
             }} style={{
               display: "inline-flex",
               alignItems: "center"
-            }}><span>{button.title}</span></button>
+            }}><span dangerouslySetInnerHTML={{ __html: button.title }}></span></button>
           ))
         }
       </div>

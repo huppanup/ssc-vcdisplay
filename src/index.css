@@ -41,7 +41,7 @@ body {
 @keyframes change-left-color {
     0% {
         background: rgba(255, 255, 255, 0);
-        color: rgb(58,58,58);
+        color: rgba(58, 58, 58, 0.7);
         box-shadow: #0765a400 -0.8vh 0.0vh 0.8vh 0.5vh;
         text-shadow: 0.2vh 0.15vh 0.2vh rgba(0, 0, 0, 0);
         animation-timing-function: ease;
@@ -57,7 +57,7 @@ body {
 @keyframes change-right-color {
     0% {
         background: rgba(255, 255, 255, 0);
-        color: rgb(58,58,58);
+        color: rgba(58, 58, 58, 0.7);
         box-shadow: #40AEA1 0.8vh 0.0vh 0.8vh 0.5vh;
         text-shadow: 0.2vh 0.15vh 0.2vh rgba(0, 0, 0, 0);
         animation-timing-function: ease;
@@ -237,7 +237,7 @@ body {
 }
 
 .sub.title {
-    font-size: x-large;
+    font-size: 3vh;
     font-weight: 700;
     overflow: hidden;
 }
@@ -246,19 +246,19 @@ body {
     max-width: 100%;
     /* flex-direction: column; */
     /* flex-wrap: wrap; */
-    font-size: x-small;
+    font-size: 1.3vh;
     font-weight: 400;
     overflow: hidden;
 }
 
 .title {
-    font-size: large;
+    font-size: 2.5vh;
     font-weight: 700;
     overflow: hidden;
 }
 
 .description {
-    font-size: smaller;
+    font-size: 1.5vh;
     font-weight: 400;
 }
 
