@@ -2,12 +2,12 @@
     "left": {
         "buttons": [{
                 "title": "Mong Kok Area Simulation in VISSIM",
-                "video_src": "./video/disco_vvideo1.mp4",
+                "video_src": "disco_vvideo1.mp4",
                 "video_desc": "DISCO integrated system is linked to micro-simulation software VISSIM for validation before implementation. Vehicle composition, kerbside activity, transit routes and yellow box effect are finely modelled in VISSIM to reflect special properties in the urban area of Hong Kong."
             },
             {
                 "title": "Roundabout Signalisation Schemes",
-                "video_src": "./video/disco_vvideo2.mp4",
+                "video_src": "disco_vvideo2.mp4",
                 "video_desc": "Signalisation scheme, including the signal head placement, signal timings, is optimised for roundabout with sophisticate driving behavior such as merging, lane changing and various priority rules."
             },
             {
