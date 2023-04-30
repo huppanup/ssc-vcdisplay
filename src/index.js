@@ -7,6 +7,8 @@ import data from "./data.json";
 import data_cn from "./data_cn.json"
 import { CSSTransition } from 'react-transition-group';
 import HomeIcon from "./resource/image/ico_home.png";
+import QRCode from "./resource/image/disco_qr.png";
+
 function Board() {
   const [selectedButton, setSelectedButton] = useState(-1);
 
@@ -41,6 +43,8 @@ function Board() {
     if (!isPanel){
       document.getElementById('right').classList.remove('active');
       document.getElementById('left').classList.remove('active');
+      document.getElementsByClassName('doughnut-border')[0].classList.remove('move-down');
+      document.getElementsByClassName('doughnut-border')[0].classList.add('move-up');
       setIsLeftSelected(false);
       setIsRightSelected(false);
       return;
@@ -107,6 +111,7 @@ function TranslateButton({ lang, toggle }) {
 
 function Panel({ panel_data, isLeft, selectedButton, buttonClickHandler, lang }) {
   const [videoSrc, setVideoSrc] = useState(panel_data.buttons[0].video_src);
+  const [videoDesc, setVideoDesc] = useState(panel_data.buttons[0].video_desc);
   
   const images = panel_data.slides;
   console.log(images);
@@ -117,28 +122,32 @@ function Panel({ panel_data, isLeft, selectedButton, buttonClickHandler, lang })
       width: "44.4vh",
       height: "90%",
       left: isLeft ? "calc(50% - 44.4vh)" : "50%",
-      top: "5%",
-      // opacity: 0
-      // display: "none"
+      top: "5%"
     }}>
-      <div className="video-container">
+      <div className="vvideo-container">
         <video key={videoSrc + (isLeft ? "0" : "1")} autoPlay muted loop poster={videoSrc.match(reg_video) ? "" : videoSrc} >
           <source src={videoSrc} type="video/mp4" />
         </video>
+        <div className="video-description">
+        {videoDesc}
       </div>
+      </div>
+      
       <div style={{
         display: "flex",
         width: "100%",
         flexWrap: "wrap",
         position: "absolute",
-        top: "23.5%"
+        bottom: "5%",
+        left: "6%"
       }}
       >
         {
           panel_data.buttons.map((button, i) => (
             <button className={i === selectedButton ? "panel button-selected" : "panel"} key={i} onClick={() => {
               buttonClickHandler(i);
-              setVideoSrc(button.video_src)
+              setVideoSrc(button.video_src);
+              setVideoDesc(button.video_desc);
             }} style={{
               display: "inline-flex",
               alignItems: "center"
@@ -146,6 +155,15 @@ function Panel({ panel_data, isLeft, selectedButton, buttonClickHandler, lang })
           ))
         }
       </div>
+      <div className="qr-container" style={{
+        position: "fixed",
+        right: isLeft? "3vh" : "80vh"}} >
+        <div> Get to know our team!</div>
+        <br></br>
+        <img src={QRCode} style={{
+        width: "100%"}}></img>
+      </div>
+      {/*
       <div style={{
         position: "absolute",
         width: "90%",
@@ -159,13 +177,14 @@ function Panel({ panel_data, isLeft, selectedButton, buttonClickHandler, lang })
             images.map((slide_image, i) => (
               <div className="each-slide-effect" key={i}>
                 <div style={{ 'backgroundImage': `url(${slide_image})` }}>
-                  {/* <span>Slide {i}</span> */}
+                  {// <span>Slide {i}</span> }
                 </div>
               </div>
             ))
           }
         </Slide>
       </div>
+      */}
     </div>
   );
 }
@@ -188,7 +207,7 @@ function Icon(props) {
 function Home({ onClick, lang }) {
   const data_lang = lang === "en" ? data : data_cn;
   return (
-    <div className='home-bg'>
+    <div className='home-bg move-up'>
       <div id="left" className='home-half title'>
         <span>{data_lang.home.init_left_top}</span>
         <span style={{ fontSize: '80%' }}>{data_lang.home.init_left_bottom}</span>
@@ -217,7 +236,7 @@ function Explore({ onClick = f => f, onClickHandler = f => f, lang }) {
   document.addEventListener("click", resetTimer);
   return (
     <>
-      <div className='home-bg fade-in'>
+      <div className='home-bg fade-in move-down'>
         <div id="left" className='sub-left' tabIndex={1} onClick={() => onClickHandler(true, true)}>
           <span className='sub title'>DISCO</span>
           <span className='sub description'><span>{data_lang.disco.line1}&nbsp;</span><span>{data_lang.disco.line2}&nbsp;</span><span>{data_lang.disco.line3}&nbsp;</span><span>{data_lang.disco.line4}&nbsp;</span><span>{data_lang.disco.line5}</span></span>
@@ -242,12 +261,14 @@ function Doughnut({ onClickHandler, lang }) {
     setIsExplore(!isExplore);
     document.getElementById('filter').style.boxShadow = !isExplore ? 'inset 0 0 0 100vmax rgba(255, 255, 255, 0.3)' : '';
     document.getElementById('filter').classList.add('fade-in');
+    document.getElementsByClassName('doughnut-border')[0].classList.remove('move-up');
+    document.getElementsByClassName('doughnut-border')[0].classList.add('move-down');
 
   }
 
   return (
     <>
-      <div className='doughnut-border'>
+      <div className='doughnut-border move-up'>
         <div className="doughnut">
         </div>
       </div>

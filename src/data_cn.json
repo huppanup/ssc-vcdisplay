@@ -1,32 +1,24 @@
 {
     "left": {
         "buttons": [{
-                "title": "VISSIM 3D 仿真",
-                "video_src": "disco_video1.mov"
+                "title": "环形交叉口信号方案",
+                "video_src": "./video/disco_vvideo1.mp4",
+                "video_desc": "针对环形交叉路口中特別的驾驶行为，如合并、变道和各种优先规则进行了信号方案优化，如信号头放置、信号时间。"
             },
             {
-                "title": "测量时间 车辆行程时间",
-                "video_src": "disco_video2.png"
+                "title": "VISSIM 香港旺角地区模拟",
+                "video_src": "./video/disco_vvideo2.mp4",
+                "video_desc": "在應用前，DISCO系统链接仿真软件 VISSIM ，以进行验证。在 VISSIM 模拟车辆组成、路边活动、公交路线和黄色方格等，以反映香港市区的特性。"
             },
             {
-                "title": "测试——年龄 识别流量计数",
-                "video_src": "disco_video3.mp4"
-            },
-            {
-                "title": "信号化方案",
-                "video_src": "disco_video4.mp4"
-            },
-            {
-                "title": "DISCO 样本",
-                "video_src": "disco_video5.mov"
+                "title": "DISCO",
+                "video_src": "disco_vvideo3.mp4",
+                "video_desc": "DISCO系统基于先进的动态交通流模型，与基于人工智能和机器学习的分析结合，得出信号配时计划并实现区域协调。该系统与系统组件相关联，包括微交通仿真软件、交通控制器、传感器和云数据库进行实施。目标是缓解交通拥堵，减少延误和排队，提高驾驶安全性。"
             },
             {
                 "title": "大潭自适应控制",
-                "video_src": "disco_photo6.png"
-            },
-            {
-                "title": "信号控制方法",
-                "video_src": "disco_photo7.png"
+                "video_src": "disco_photo6.png",
+                "video_desc": "通过与基于 AI 和ML 的优化分析的联系，DISCO 利用现场安装的探测器收集的數據信息来分析和推导香港大潭路的自适应信号控制策略。"
             }
         ],
         "slides": [
@@ -38,35 +30,28 @@
     "right": {
         "buttons": [{
                 "title": "全香港网络",
-                "video_src": "matsim_video1.mp4"
+                "video_src": "matsim_vvideo1.mp4",
+                "video_desc": "按真实班次数据生成的铁路网络。"
             },
             {
                 "title": "弥敦道 - 下午",
-                "video_src": "matsim_video2.mp4"
+                "video_src": "matsim_vvideo2.mp4",
+                "video_desc": "可观察中国香港市中心油尖旺区的路面交通情况，精准至一秒。"
             },
             {
                 "title":"香港岛 上午<br />- 高峰时间",
-                "video_src": "matsim_video3.mp4"
+                "video_src": "matsim_vvideo3.mp4",
+                "video_desc": "预测中环湾仔绕道建成后对香港岛带来的交通分流和减少塞车的情况。"
             },
             {
                 "title": "信号化路口",
-                "video_src": "matsim_video4.mp4"
+                "video_src": "matsim_vvideo4.mp4",
+                "video_desc": "这是覆盖全城主要交通工具、全日出行的仿真。"
             },
             {
                 "title": "港铁网络",
-                "video_src": "matsim_video5.mp4"
-            },
-            {
-                "title": "分析演示转移",
-                "video_src": "matsim_video6.png"
-            },
-            {
-                "title": "分析演示 车辆负载",
-                "video_src": "matsim_video7.png"
-            },
-            {
-                "title": "分析演示 聚合车辆负载",
-                "video_src": "matsim_video8.png"
+                "video_src": "matsim_vvideo5.mp4",
+                "video_desc": "模型也包括道路收费和出行者的路线选择，使我们得以研究动态过海隧道收费对交通的影响。"
             }
         ],
         "slides": [

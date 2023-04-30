@@ -1,32 +1,24 @@
 {
     "left": {
         "buttons": [{
-                "title": "VISSIM 3D Simulation",
-                "video_src": "disco_video1.mov"
+                "title": "Mong Kok Area Simulation in VISSIM",
+                "video_src": "./video/disco_vvideo1.mp4",
+                "video_desc": "DISCO integrated system is linked to micro-simulation software VISSIM for validation before implementation. Vehicle composition, kerbside activity, transit routes and yellow box effect are finely modelled in VISSIM to reflect special properties in the urban area of Hong Kong."
             },
             {
-                "title": "Measurement on Vehicle Travel Time",
-                "video_src": "disco_video2.png"
+                "title": "Roundabout Signalisation Schemes",
+                "video_src": "./video/disco_vvideo2.mp4",
+                "video_desc": "Signalisation scheme, including the signal head placement, signal timings, is optimised for roundabout with sophisticate driving behavior such as merging, lane changing and various priority rules."
             },
             {
-                "title": "Testing – Image Recognition Flow Count",
-                "video_src": "disco_video3.mp4"
-            },
-            {
-                "title": "Signalization Schemes",
-                "video_src": "disco_video4.mp4"
-            },
-            {
-                "title": "DISCO Sample",
-                "video_src": "disco_video5.mov"
+                "title": "DISCO",
+                "video_src": "disco_vvideo3.mp4",
+                "video_desc": "DISCO integrated system is based on advanced dynamic traffic flow model, with linking to AI-based and machine learning-based optimal analytics to derive signal timing plans and achieve regional coordination. The system is linked to system components including micro-simulation software, traffic controllers, sensors and cloud database for implementation. The goal is to mitigate traffic congestion, reduce delay and queue, and improve driving safety."
             },
             {
                 "title": "Tai Tam Adaptive Control",
-                "video_src": "disco_photo6.png"
-            },
-            {
-                "title": "Signal Control Methods",
-                "video_src": "disco_photo7.png"
+                "video_src": "disco_photo6.png",
+                "video_desc": "With the linkage to AI-based and ML-based optimal analytics, DISCO utilises detector pattern information from detectors installed onsite to derive and analyse the adaptive signal control strategies for the special Tai Tam Road in Hong Kong."
             }
         ],
         "slides": [
@@ -38,35 +30,28 @@
     "right": {
         "buttons": [{
                 "title": "Full HK Network",
-                "video_src": "matsim_video1.mp4"
+                "video_src": "matsim_video1.mp4",
+                "video_desc": "The simulated metro network is based on a real schedule."
             },
             {
                 "title": "PM Nathan Road",
-                "video_src": "matsim_video2.mp4"
+                "video_src": "matsim_video2.mp4",
+                "video_desc": "Observing the traffics of Yau Tsim Mon District, the city center in Hong Kong, precise to seconds."
             },
             {
                 "title": "HK Island AM Peak",
-                "video_src": "matsim_video3.mp4"
+                "video_src": "matsim_video3.mp4",
+                "video_desc": "Predicting diversion and traffic jam alleviation in Hong Kong Island with Central-Wanchai Bypass."
             },
             {
                 "title": "Signalised Junctions",
-                "video_src": "matsim_video4.mp4"
+                "video_src": "matsim_video4.mp4",
+                "video_desc": "The large-scale simulation covers the whole city for all main transport modes, for all day."
             },
             {
                 "title": "MTR Network",
-                "video_src": "matsim_video5.mp4"
-            },
-            {
-                "title": "Analysis Demo Transfer",
-                "video_src": "matsim_video6.png"
-            },
-            {
-                "title": "Analysis Demo Vehicle Load",
-                "video_src": "matsim_video7.png"
-            },
-            {
-                "title": "Analysis Demo Aggregated Vehicle Load",
-                "video_src": "matsim_video8.png"
+                "video_src": "matsim_video5.mp4",
+                "video_desc": "The model includes road pricing and driver route choice, which enables us to study the effect of dynamic pricing of cross-harbor tunnel toll."
             }
         ],
         "slides": [
