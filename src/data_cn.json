@@ -2,12 +2,12 @@
     "left": {
         "buttons": [{
                 "title": "环形交叉口信号方案",
-                "video_src": "./video/disco_vvideo1.mp4",
+                "video_src": "disco_vvideo1.mp4",
                 "video_desc": "针对环形交叉路口中特別的驾驶行为，如合并、变道和各种优先规则进行了信号方案优化，如信号头放置、信号时间。"
             },
             {
                 "title": "VISSIM 香港旺角地区模拟",
-                "video_src": "./video/disco_vvideo2.mp4",
+                "video_src": "disco_vvideo2.mp4",
                 "video_desc": "在應用前，DISCO系统链接仿真软件 VISSIM ，以进行验证。在 VISSIM 模拟车辆组成、路边活动、公交路线和黄色方格等，以反映香港市区的特性。"
             },
             {
