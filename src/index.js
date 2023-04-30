@@ -157,7 +157,9 @@ function Panel({ panel_data, isLeft, selectedButton, buttonClickHandler, lang })
       </div>
       <div className="qr-container" style={{
         position: "fixed",
-        right: isLeft? "3vh" : "80vh"}} >
+        right: isLeft? "3vh" : "",
+        left: isLeft? "" : "3vh"
+      }} >
         <div> Get to know our team!</div>
         <br></br>
         <img src={QRCode} style={{
