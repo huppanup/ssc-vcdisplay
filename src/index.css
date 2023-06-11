@@ -350,17 +350,37 @@ video {
     top: 0%;
 }
 
-.video-description {
+.video-desc-box {
     font-size: 1.2vh;
     font-style: italic;
-    background-color: rgba(255, 255, 255, 0.7);
-    position: absolute;
-    width: 83%;
-    left: 7%;
     padding: 1.5%;
-    bottom: 3%;
+    color: white;
+}
+.video-desc-title {
+    margin:auto;
+    top: 2vh;
+    position: relative;
+    display: block;
+    width: 80%;
+    font-size: 3vh;
+    font-weight: 900;
+    font-style:oblique;
+    padding: 1.5%;
     text-align: center;
-    border-radius: 1.2vh;
+}
+.video-desc-text {
+    display: block;
+    position: relative;
+    left:6vh;
+    line-height: 1.7;
+    width: 80%;
+    padding: 1.5%;
+}
+
+.border-bottom {
+    position:relative;
+    max-width: 100%;
+    top: -3vh;
 }
 
 .qr-container{

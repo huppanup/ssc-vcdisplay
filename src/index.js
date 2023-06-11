@@ -109,14 +109,42 @@ function TranslateButton({ lang, toggle }) {
   );
 }
 
+function Description({title, description}) {
+  return (
+    <div className="video-desc-box">
+      <div className="video-desc-title">{title}</div>
+      <img src={"text_border_top.png"} style={{ maxWidth: "100%"}}></img>
+      <div className="video-desc-text">{description}</div>
+      <img className="border-bottom" src={"text_border_bottom.png"} style={{}}></img>
+    </div>
+  );
+}
+
+function QR({isLeft}){
+  return (
+    <div className="qr-container" style={{
+      position: "fixed",
+      right: isLeft? "3vh" : "",
+      left: isLeft? "" : "3vh"
+    }} >
+      <div> Get to know our team!</div>
+      <br></br>
+      <img src={QRCode} style={{
+      width: "100%"}}></img>
+  </div>
+  );
+}
+
 function Panel({ panel_data, isLeft, selectedButton, buttonClickHandler, lang }) {
   const [videoSrc, setVideoSrc] = useState(panel_data.buttons[0].video_src);
+  const [videoTitle, setVideoTitle] = useState(panel_data.buttons[0].title);
   const [videoDesc, setVideoDesc] = useState(panel_data.buttons[0].video_desc);
   
   const images = panel_data.slides;
   console.log(images);
   const reg_video = /\.(mov|mp4)/i;
   return (
+    <div>
     <div style={{
       position: "absolute",
       width: "44.4vh",
@@ -128,11 +156,7 @@ function Panel({ panel_data, isLeft, selectedButton, buttonClickHandler, lang })
         <video key={videoSrc + (isLeft ? "0" : "1")} autoPlay muted loop poster={videoSrc.match(reg_video) ? "" : videoSrc} >
           <source src={videoSrc} type="video/mp4" />
         </video>
-        <div className="video-description">
-        {videoDesc}
       </div>
-      </div>
-      
       <div style={{
         display: "flex",
         width: "100%",
@@ -148,6 +172,7 @@ function Panel({ panel_data, isLeft, selectedButton, buttonClickHandler, lang })
               buttonClickHandler(i);
               setVideoSrc(button.video_src);
               setVideoDesc(button.video_desc);
+              setVideoTitle(button.title);
             }} style={{
               display: "inline-flex",
               alignItems: "center"
@@ -155,38 +180,19 @@ function Panel({ panel_data, isLeft, selectedButton, buttonClickHandler, lang })
           ))
         }
       </div>
-      <div className="qr-container" style={{
-        position: "fixed",
-        right: isLeft? "3vh" : "",
-        left: isLeft? "" : "3vh"
-      }} >
-        <div> Get to know our team!</div>
-        <br></br>
-        <img src={QRCode} style={{
-        width: "100%"}}></img>
-      </div>
-      {/*
-      <div style={{
-        position: "absolute",
-        width: "90%",
-        height: "25%",
-        left: "5%",
-        top: "70%",
-        // backgroundColor: "yellow"
-      }}>
-        <Slide indicators={true} autoplay={false} key={isLeft ? 0 : 1}>
-          {
-            images.map((slide_image, i) => (
-              <div className="each-slide-effect" key={i}>
-                <div style={{ 'backgroundImage': `url(${slide_image})` }}>
-                  {// <span>Slide {i}</span> }
-                </div>
-              </div>
-            ))
-          }
-        </Slide>
-      </div>
-      */}
+    </div>
+    <div style={{
+      position: "absolute",
+      width: "47vh",
+      height: "50%",
+      left: isLeft ? "50%" : "calc(50% - 47vh)" ,
+      top: "5%",
+      display: "flex",
+      alignItems: "center"
+    }}>
+      <Description title={videoTitle} description={videoDesc}/>
+    </div>
+      <QR isLeft={isLeft}></QR>
     </div>
   );
 }
@@ -261,7 +267,7 @@ function Doughnut({ onClickHandler, lang }) {
 
   const exploreMenu = () => {
     setIsExplore(!isExplore);
-    document.getElementById('filter').style.boxShadow = !isExplore ? 'inset 0 0 0 100vmax rgba(255, 255, 255, 0.3)' : '';
+    document.getElementById('filter').style.boxShadow = !isExplore ? 'inset 0 0 0 100vmax rgba(0, 0, 0, 0.3)' : '';
     document.getElementById('filter').classList.add('fade-in');
     document.getElementsByClassName('doughnut-border')[0].classList.remove('move-up');
     document.getElementsByClassName('doughnut-border')[0].classList.add('move-down');
