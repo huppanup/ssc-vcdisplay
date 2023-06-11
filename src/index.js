@@ -112,9 +112,9 @@ function TranslateButton({ lang, toggle }) {
 function Description({title, description}) {
   return (
     <div className="video-desc-box">
-      <div className="video-desc-title">{title}</div>
+      <div className="video-desc-title" dangerouslySetInnerHTML={{ __html: title }}></div>
       <img src={"text_border_top.png"} style={{ maxWidth: "100%"}}></img>
-      <div className="video-desc-text">{description}</div>
+      <span className="video-desc-text" dangerouslySetInnerHTML={{ __html: description }}></span>
       <img className="border-bottom" src={"text_border_bottom.png"} style={{}}></img>
     </div>
   );
@@ -147,14 +147,14 @@ function Panel({ panel_data, isLeft, selectedButton, buttonClickHandler, lang })
     <div>
     <div style={{
       position: "absolute",
-      width: "44.4vh",
+      width: "44.4vw",
       height: "90%",
-      left: isLeft ? "calc(50% - 44.4vh)" : "50%",
+      left: isLeft ? "calc(50% - 44.4vw)" : "50%",
       top: "5%"
     }}>
       <div className="vvideo-container">
         <video key={videoSrc + (isLeft ? "0" : "1")} autoPlay muted loop poster={videoSrc.match(reg_video) ? "" : videoSrc} >
-          <source src={videoSrc} type="video/mp4" />
+          <source src={"video/" + videoSrc} type="video/mp4" />
         </video>
       </div>
       <div style={{
@@ -183,9 +183,9 @@ function Panel({ panel_data, isLeft, selectedButton, buttonClickHandler, lang })
     </div>
     <div style={{
       position: "absolute",
-      width: "47vh",
+      width: "47vw",
       height: "50%",
-      left: isLeft ? "50%" : "calc(50% - 47vh)" ,
+      left: isLeft ? "50%" : "calc(50% - 47vw)" ,
       top: "5%",
       display: "flex",
       alignItems: "center"
