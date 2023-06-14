@@ -111,7 +111,7 @@ function TranslateButton({ lang, toggle }) {
 
 function Description({title, description}) {
   return (
-    <div className="video-desc-box">
+    <div className="video-desc-box fade-in">
       <div className="video-desc-title" dangerouslySetInnerHTML={{ __html: title }}></div>
       <img src={"text_border_top.png"} style={{ maxWidth: "100%"}}></img>
       <span className="video-desc-text" dangerouslySetInnerHTML={{ __html: description }}></span>
@@ -120,14 +120,14 @@ function Description({title, description}) {
   );
 }
 
-function QR({isLeft}){
+function QR({isLeft, lang}){
   return (
     <div className="qr-container" style={{
       position: "fixed",
       right: isLeft? "3vh" : "",
       left: isLeft? "" : "3vh"
     }} >
-      <div> Get to know our team!</div>
+      <div style={{color: 'white'}}>{lang === "cn" ? "了解更多！" : "Get to know our team!"}</div>
       <br></br>
       <img src={QRCode} style={{
       width: "100%"}}></img>
@@ -137,7 +137,7 @@ function QR({isLeft}){
 
 function Panel({ panel_data, isLeft, selectedButton, buttonClickHandler, lang }) {
   const [videoSrc, setVideoSrc] = useState(panel_data.buttons[0].video_src);
-  const [videoTitle, setVideoTitle] = useState(panel_data.buttons[0].title);
+  const [videoTitle, setVideoTitle] = useState(panel_data.buttons[0].video_title);
   const [videoDesc, setVideoDesc] = useState(panel_data.buttons[0].video_desc);
   
   const images = panel_data.slides;
@@ -152,31 +152,40 @@ function Panel({ panel_data, isLeft, selectedButton, buttonClickHandler, lang })
       left: isLeft ? "calc(50% - 44.4vw)" : "50%",
       top: "5%"
     }}>
-      <div className={"vvideo-container " + (isLeft ? "container-left" : "container-right")}>
+      <div className={"fade vvideo-container " + (isLeft ? "container-left" : "container-right")}>
         <video key={videoSrc + (isLeft ? "0" : "1")} autoPlay muted loop poster={videoSrc.match(reg_video) ? "" : videoSrc} >
           <source src={"video/" + videoSrc} type="video/mp4" />
         </video>
       </div>
-      <div style={{
+      <div style={isLeft ? {
         display: "flex",
-        width: "100%",
+        width: "29%",
         flexWrap: "wrap",
         position: "absolute",
         bottom: "5%",
-        left: "6%"
+        left: "-5%",
+        flexDirection: "column"
+      } : {
+        display: "flex",
+        width: "29%",
+        flexWrap: "wrap",
+        position: "absolute",
+        bottom: "5%",
+        right: "-1%",
+        flexDirection: "column"
       }}
       >
         {
           panel_data.buttons.map((button, i) => (
-            <button className={i === selectedButton ? "panel button-selected" : "panel"} key={i} onClick={() => {
+            <button className={i === selectedButton ? `panel button-selected ${lang}` : `panel ${lang}`} key={i} onClick={() => {
               buttonClickHandler(i);
               setVideoSrc(button.video_src);
               setVideoDesc(button.video_desc);
-              setVideoTitle(button.title);
+              setVideoTitle(button.video_title);
             }} style={{
               display: "inline-flex",
               alignItems: "center"
-            }}><span dangerouslySetInnerHTML={{ __html: button.title }}></span></button>
+            }}><span className='button-text' dangerouslySetInnerHTML={{ __html: button.title }}></span></button>
           ))
         }
       </div>
@@ -192,14 +201,14 @@ function Panel({ panel_data, isLeft, selectedButton, buttonClickHandler, lang })
     }}>
       <Description title={videoTitle} description={videoDesc}/>
     </div>
-      <QR isLeft={isLeft}></QR>
+      <QR isLeft={isLeft} lang={lang}></QR>
     </div>
   );
 }
 
 function Icon(props) {
   return (
-    <svg width="13" height="13" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="20" height="20" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path fillRule="evenodd" clipRule="evenodd" d="M9 9.5V34.5L34 22L9 9.5Z" fill="#1A1A1A" />
     </svg>
   );
@@ -215,14 +224,14 @@ function Icon(props) {
 function Home({ onClick, lang }) {
   const data_lang = lang === "en" ? data : data_cn;
   return (
-    <div className='home-bg move-up'>
-      <div id="left" className='home-half title'>
-        <span>{data_lang.home.init_left_top}</span>
-        <span style={{ fontSize: '80%' }}>{data_lang.home.init_left_bottom}</span>
+    <div className={`home-bg move-up`}>
+      <div id="left" className={`home-half title ${lang}`}>
+        <span className="home-left-half">{data_lang.home.init_left_top}</span>
+        <span className="home-left-half" style={{ fontSize: '80%' }}>{data_lang.home.init_left_bottom}</span>
       </div>
       <div id="right" className='home-half description'>
         <span> {data_lang.home.init_right}</span>
-        <button onClick={() => onClick()}><Icon value="play" />{data_lang.home.init_right_button}</button>
+        <button onClick={() => onClick()} className='play'><Icon value="play" />{data_lang.home.init_right_button}</button>
       </div>
     </div>
   );

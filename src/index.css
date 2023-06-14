@@ -38,6 +38,34 @@ body {
 
 /******** Page Background Elements **********/
 
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+        animation-timing-function: ease;
+    }
+
+    20%, 25% {
+        transform: rotate(90deg);
+        animation-timing-function: ease;
+    }
+
+    45%, 50% {
+        transform: rotate(180deg);
+        animation-timing-function: ease;
+    }
+
+    70%, 75% {
+        transform: rotate(270deg);
+        animation-timing-function: ease;
+    }
+
+    95%, 100% {
+        transform: rotate(360deg);
+        animation-timing-function: ease;
+    }
+}
+
 @keyframes change-left-color {
     0% {
         background: rgba(255, 255, 255, 0);
@@ -109,36 +137,6 @@ body {
     animation-fill-mode: forwards !important;
 }
 
-@keyframes rotation {
-    0% {
-        transform: rotate(0deg);
-        animation-timing-function: ease;
-    }
-
-    20%,
-    25% {
-        transform: rotate(90deg);
-        animation-timing-function: ease;
-    }
-
-    45%,
-    50% {
-        transform: rotate(180deg);
-        animation-timing-function: ease;
-    }
-
-    70%,
-    75% {
-        transform: rotate(270deg);
-        animation-timing-function: ease;
-    }
-
-    95%,
-    100% {
-        transform: rotate(360deg);
-        animation-timing-function: ease;
-    }
-}
 
 .doughnut-border {
     position: absolute;
@@ -148,7 +146,7 @@ body {
     height: 57vh;
     background-size: cover;
     background-image: url('resource/image/doughnut_border.png');
-    animation: rotation linear infinite 15s;
+    animation: rotation-test linear infinite 15s;
 }
 
 .doughnut {
@@ -179,6 +177,10 @@ body {
     color: rgb(39, 39, 39);
 }
 
+.title.cn {
+    font-size: 3.5vh;
+}
+
 .v-divider {
     border-left: 0.13vh solid rgb(65, 65, 65);
     height: 10vh;
@@ -206,6 +208,10 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
+}
+
+span.home-left-half {
+    font-size: 3.8vh;
 }
 
 .sub-left {
@@ -290,6 +296,10 @@ body {
     text-align: right;
 }
 
+span.button-text {
+    line-height: 2vh;
+}
+
 span {
     display: block;
 }
@@ -304,7 +314,7 @@ svg {
 button {
     margin-top: 1vh;
     width: 70%;
-    border-radius: 1vh;
+    border-radius: 3vh;
     border-style: none;
     text-align: center;
     justify-content: center;
@@ -315,6 +325,11 @@ button {
     transition-duration: 0.35s;
     cursor: pointer;
     color: rgb(58, 58, 58);
+}
+
+button.play {
+    height: 2vh;
+    font-size: 1.5vh;
 }
 
 button:hover path {
@@ -372,7 +387,7 @@ video {
     top: 3vh;
     position: relative;
     display: block;
-    width: 60%;
+    width: 100%;
     font-size: 3vh;
     font-weight: 900;
     font-style:oblique;
@@ -386,6 +401,7 @@ video {
     line-height: 1.5;
     width: 77%;
     padding: 1.5%;
+    font-size: 1.3rem;
 }
 
 .border-bottom {
@@ -408,18 +424,21 @@ video {
 
 button.panel {
     /* position: relative; */
-    width: 25%;
-    height: 4.6vh;
+    width: 100%;
+    height: 7vh;
     margin: 2%;
     /* top: 32.75%; */
     /* bottom: 65.27%; */
 
     font-style: normal;
-    font-weight: 400;
-    font-size: 1.1vh;
+    font-weight: 700;
+    font-size: 1.5vh;
     line-height: 95%;
     font-family: 'muli';
+    letter-spacing: 0.1rem;
     /* or 16px */
+
+    margin-top: 2vh;
 
     text-align: center;
 
@@ -427,6 +446,11 @@ button.panel {
     background: linear-gradient(180deg, #61A2E5 0%, rgba(53, 113, 176, 0.89) 47.86%, #2ED2B7 100%),
         linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
 
+}
+
+button.panel.cn {
+    font-size: 1.6vh;
+    font-weight: 600;
 }
 
 button.button-selected {

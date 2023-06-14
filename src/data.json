@@ -1,23 +1,27 @@
 {
     "left": {
         "buttons": [{
-                "title": "Mong Kok Simulation in VISSIM",
+                "title": "Mong Kok<br>Simulation<br>in VISSIM",
                 "video_src": "DISCO_video_Eng_dubbed/DISCO_VISSIM 3D simulation_dubbed.mp4",
+                "video_title": "Mong Kok Simulation in<br>VISSIM",
                 "video_desc": "The performance of the optimised plan is not only good in DISCO without validation. The state-of-the-art micro-simulation software VISSIM was used as well to validate timing plans. In VISSIM, you can spot individual vehicles, such as typical passenger cars, or buses with fixed routes that alight passengers at certain bus stops. Vehicles behave the same as in the real world, where vehicles accelerate, decelerate, turn, change lane and follows red and green signals. Traffic would be smooth for some junctions, whereas vehicles may jam and queue up to the upstream junctions so that you can identify congestion easily. More detailed road features in Hong Kong are also modelled in VISSIM, such as kerbside activity, parking, and yellow box effect."
             },
             {
-                "title": "Roundabout Signalisation Schemes",
+                "title": "Roundabout<br>Signalisation<br>Schemes",
                 "video_src": "DISCO_video_Eng_dubbed/DISCO_Roundabout Signalisation Schemes_dubbed.mp4",
+                "video_title": "Roundabout Signalisation<br>Schemes",
                 "video_desc": "A roundabout is a traffic interchange where approaching vehicles yield to circulating vehicles. They usually perform well under normal traffic conditions, causing minimal queue and delay compared to signalized junctions. However, they may become congested with heavy traffic, resulting in long queues and delays for approaching vehicles.<br />To mitigate this congestion, signals can be deployed at roundabouts, referred to as signalisation. Two major problems with signalisation are determining where the signals should be placed and setting the cycle time, green times, and staging. An AI-based engine can solve both problems, optimizing signal placement and timing. This solution has been validated using VISSIM, reducing network delay by up to 69% and shortening vehicle queues."
             },
             {
-                "title": "DISCO Sample",
+                "title": "DISCO<br>Sample",
                 "video_src": "DISCO_video_Eng_dubbed/DISCO_DISCO sample_dubbed.mp4",
+                "video_title": "DISCO Sample",
                 "video_desc": "DISCO is an advanced traffic flow model where cells represent road segments and their color indicates traffic conditions, with darker colors indicating heavy traffic. The cell-based modeling technique speeds up computation and optimization.<br />DISCO is part of a complete traffic control solution that links to AI and machine learning-based analytics for deriving signal timing plans and regional coordination. It also links to micro-simulation software like VISSIM for validation, and hardware components like sensors and cloud databases for real-time traffic information. After generating optimal timing plans, DISCO transfers them to signal controllers to mitigate congestion, reduce delays and queues, and improve driving safety."
             },
             {
-                "title": "Tai Tam Adaptive Control",
+                "title": "Tai Tam<br>Adaptive<br>Control",
                 "video_src": "DISCO_video_Eng_dubbed/DISCO_Tai Tam Adaptive_dubbed.mp4",
+                "video_title": "Tai Tam Adaptive Control",
                 "video_desc": "With the linkage to AI-based and ML-based optimal analytics, DISCO optimises the adaptive strategy. Different strategies are triggered based on the detector patterns observed onsite. For example, if one approach (e.g. Northbound) is queued whereas there is no queue for the other approach (Southbound), DISCO will pick the corresponding timing plan that will provide more green time for the northbound and less for the southbound. Timing plans will be selected over and over the cycle to react to the time-varying traffic. The advancement is that optimal analytics will select important detector patterns, derive optimal strategies."
             }
         ],
@@ -29,28 +33,33 @@
     },
     "right": {
         "buttons": [{
-                "title": "Full HK Network",
+                "title": "Full HK<br>Network",
                 "video_src": "MATSim_video_Eng_dubbed/MATSim_Full HK Network_Eng_dubbed.mp4",
+                "video_title": "Full HK Network",
                 "video_desc": "This is the MATSim-Hong Kong model, tailored to meet the unique travel needs of Hong Kong. With over 4 million agents and 7 million trips, this agent-based dynamic transportation model is the first of its kind and has been adopted for network service planning.  After simulation, you can witness the city come to life in a typical morning as vehicles move around the entire city, showcasing the bustling activity of Hong Kong. With just a few clicks, you can perform various analyses to explore transportation patterns."
             },
             {
-                "title": "PM Nathan Road",
+                "title": "PM Nathan<br>Road",
                 "video_src": "MATSim_video_Eng_dubbed/MATSim_PM Nathan Road_dubbed.mp4",
+                "video_title": "PM Nathan Road",
                 "video_desc": "Welcome to Nathan Road, one of the major trunk roads in Kowloon, Hong Kong. Watch as a bus travels from Tsim Sha Tsui to Mong Kok, and observe the traffic, speed, and vehicle trajectories second-by-second. With our simulation, even the lane details and signals are covered, providing a comprehensive view of the road transport. Explore the road in detail and examine the Hong Kong's bustling transportation network."
             },
             {
-                "title": "HK Island AM Peak",
+                "title": "HK Island<br>AM Peak",
                 "video_src": "MATSim_video_Eng_dubbed/MATSim_HK island AM Peak_dubbed.mp4",
+                "video_title": "HK Island AM Peak",
                 "video_desc": "Our simulation model enables us to predict the vehicle diversion and alleviation of traffic congestion after the construction of the Central-Wanchai Bypass, a new trunk road in Hong Kong Island. Watch as vehicles are diverted to the new road throughout the day, providing a comprehensive view of the traffic patterns and how they change with the addition of a new road. Our simulation enables you to analyze the impact of new roads and gain valuable insights into how transportation infrastructure can affect how the city is moving."
             },
             {
-                "title": "Signalised Junctions",
+                "title": "Signalised<br>Junctions",
                 "video_src": "MATSim_video_Eng_dubbed/MATSim_Signalised Junctions_dubbed.mp4",
+                "video_title": "Signalised Junctions",
                 "video_desc": "Our simulation model also includes road pricing and driver route choice. With this, we can predict traffic diversion and traveler mode choice based on road tolls. Look at our model on the Eastern Harbour Crossing, one of the three cross-harbor tunnels that connect Kowloon and Hong Kong Island. Through the model, it is intutive to explore the impact of road pricing on traffic flow and mode choice, and understand how transportation policies can affect the city's transportation network. Overall, our simulation provides a detailed insight of transport and enables you to analyze different scenarios to plan for the future."
             },
             {
-                "title": "MTR Network",
+                "title": "MTR<br>Network",
                 "video_src": "MATSim_video_Eng_dubbed/MATSim_MTR Network_dubbed.mp4",
+                "video_title": "MTR Network",
                 "video_desc": "The metro is an essential transportation mode in Hong Kong, and our simulation model reflects this with a detailed metro system that includes schedules, real travel times, actual train departure times, and accurate vehicle capacity and configurations. Watch as the metro moves around Hong Kong. Our simulation provides a thorough analysis of the metro system and enables us to analyze the transportation patterns of Hong Kong's metro system."
             }
         ],
