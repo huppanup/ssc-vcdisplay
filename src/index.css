@@ -89,7 +89,7 @@ body {
     from {
         transform: translateY(0);
     } to {
-        transform: translateY(22vh);
+        transform: translateY(18vh);
     } 
 }
 
@@ -99,7 +99,7 @@ body {
 }
 @keyframes move-up {
     from {
-        transform: translateY(22vh);
+        transform: translateY(18vh);
     } to {
         transform: translateY(0vh);
     } 
@@ -142,10 +142,10 @@ body {
 
 .doughnut-border {
     position: absolute;
-    left: calc(50% - 25vh);
-    top: calc(50% - 25vh);
-    width: 50vh;
-    height: 50vh;
+    left: calc(50% - 28.5vh);
+    top: calc(50% - 28.5vh);
+    width: 57vh;
+    height: 57vh;
     background-size: cover;
     background-image: url('resource/image/doughnut_border.png');
     animation: rotation linear infinite 15s;
@@ -156,8 +156,8 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 45vh;
-    height: 45vh;
+    width: 53vh;
+    height: 53vh;
     background-size: cover;
     background-image: url('resource/image/doughnut.png');
 }
@@ -165,11 +165,12 @@ body {
 /******** Menu Elements **********/
 
 .home-bg {
+    --size-home: 36vh;
     position: absolute;
-    left: calc(50% - 15.5vh);
-    top: calc(50% - 15.5vh);
-    width: 31vh;
-    height: 31vh;
+    left: calc(50% - calc(var(--size-home) / 2));
+    top: calc(50% - calc(var(--size-home) / 2));
+    width: var(--size-home);
+    height: var(--size-home);
     background: rgba(255, 255, 255, 0.5);
     border-radius: 50%;
     display: flex;
@@ -208,11 +209,11 @@ body {
 }
 
 .sub-left {
-    border-radius: 15.5vh 0% 0% 15.5vh;
+    border-radius: 18vh 0% 0% 18vh;
     padding: 0.7vh;
     position: relative;
-    height: calc(31vh - 1.4vh);
-    width: 31vh;
+    height: calc(36vh - 1.4vh);
+    width: 36vh;
     justify-content: center;
     display: flex;
     flex-direction: column;
@@ -240,11 +241,11 @@ body {
 }
 
 .sub-right {
-    border-radius: 0% 15.5vh 15.5vh 0%;
+    border-radius: 0% 18vh 18vh 0%;
     position: relative;
     padding: 0.7vh;
-    height: calc(31vh - 1.4vh);
-    width: 31vh;
+    height: calc(36vh - 1.4vh);
+    width: 36vh;
     justify-content: center;
     display: flex;
     flex-direction: column;
