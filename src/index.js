@@ -152,7 +152,7 @@ function Panel({ panel_data, isLeft, selectedButton, buttonClickHandler, lang })
       left: isLeft ? "calc(50% - 44.4vw)" : "50%",
       top: "5%"
     }}>
-      <div className="vvideo-container">
+      <div className={"vvideo-container " + (isLeft ? "container-left" : "container-right")}>
         <video key={videoSrc + (isLeft ? "0" : "1")} autoPlay muted loop poster={videoSrc.match(reg_video) ? "" : videoSrc} >
           <source src={"video/" + videoSrc} type="video/mp4" />
         </video>

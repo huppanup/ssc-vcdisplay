@@ -2,22 +2,22 @@
     "left": {
         "buttons": [{
                 "title": "环形交叉口信号化方案",
-                "video_src": "disco_vvideo1.mp4",
+                "video_src": "DISCO_video_Mando_dubbed/DISCO_Mando_VISSIM 3D simulation_dubbed.mp4",
                 "video_desc": "环形交叉口是一种交通互通方式，进入的车辆要让行驶中的车辆先行。它们通常在正常交通条件下表现良好，与信号化路口相比，造成的排队和延误最小。然而，在交通繁忙时，它们可能会变得拥挤，导致进入的车辆排队等待时间变长。<br />为了缓解这种拥堵，可以在环形交叉口部署信号，称为信号化。信号化的两个主要问题是确定信号灯的放置位置和设置循环时间、绿灯时间和阶段。基于人工智能的引擎可以解决这两个问题，优化信号灯的放置和定时。这个解决方案已经通过VISSIM验证，可以将网络延迟降低高达69%，缩短车辆排队等待时间"
             },
             {
                 "title": "VISSIM 香港旺角地区模拟",
-                "video_src": "disco_vvideo2.mp4",
+                "video_src": "DISCO_video_Mando_dubbed/DISCO_Mando_Roundabout Signalisation Schemes_dubbed.mp4",
                 "video_desc": "优化方案的表现不仅在没有验证的情况下在DISCO中表现良好。同时还使用了最先进的微观仿真软件VISSIM来验证定时计划。在VISSIM中，您可以看到单个车辆，如典型的乘用车或公交车，在某些公交车站点卸载乘客，车辆的行驶行为与现实世界中的车辆相同，包括加速、减速、转弯、变道以及遵循红绿信号。交通在某些路口可能会很顺畅，而车辆可能会堵塞并排队到上游路口，因此您可以轻松地识别拥堵情况。在VISSIM中还模拟了香港更详细的道路特征，如路缘活动、停车和黄盒子效应。"
             },
             {
                 "title": "DISCO 样例",
-                "video_src": "disco_vvideo3.mp4",
+                "video_src": "DISCO_video_Mando_dubbed/DISCO_Mando_DISCO sample_dubbed.mp4",
                 "video_desc": "DISCO是一种高级交通流模型，其中每个单元格代表道路段，其颜色表示交通状况，颜色越深表示交通越拥堵。基于单元格的建模技术可以加速计算和优化。<br />DISCO是完整的交通控制解决方案的一部分，它与基于人工智能和机器学习的分析相连接，用于导出信号计时计划和区域协调。它还与微观仿真软件如VISSIM相连接，用于验证，以及与传感器和云数据库等硬件组件相连接，获取实时交通信息。在生成最优定时计划后，DISCO将它们传输到信号控制器，以缓解拥堵、减少延误和排队，并提高驾驶安全性。 "
             },
             {
                 "title": "大潭自适应控制",
-                "video_src": "disco_photo6.png",
+                "video_src": "DISCO_video_Mando_dubbed/DISCO_Mando_Tai Tam Adaptive Control_dubbed.mp4",
                 "video_desc": "通过与基于人工智能和机器学习的最优分析相连接，DISCO优化自适应策略。不同的策略是根据现场观察到的检测器模式触发的。例如，如果一个方向（例如北向）排队而另一个方向（南向）没有排队，DISCO将选择相应的定时计划，为北向提供更多的绿灯时间，为南向提供较少的绿灯时间。定时计划将在周期内一遍遍地被选择，以应对时变交通。这项技术的进步在于，最优分析将选择重要的检测器模式，并推导出最佳策略。"
             }
         ],
@@ -30,27 +30,27 @@
     "right": {
         "buttons": [{
                 "title": "全香港网络",
-                "video_src": "matsim_vvideo1.mp4",
+                "video_src": "MATSim_video_Mando_dubbed/MATSim_Mando_Full HK Network_Eng_dubbed.mp4",
                 "video_desc": "这是MATSim-Hong Kong模型，专门为香港的独特出行需求量身定制。拥有超过4百万的模拟人和7百万的行程，这个基于模拟人的动态交通模型是首个其类别，已被采用为网络服务规划。模拟后，您可以观察到整个香港在一个典型的早晨里车辆的活动，展示了香港繁忙的活动。只需几个点击，您就可以进行各种分析以探索交通运输模式。"
             },
             {
                 "title": "弥敦道 - 下午",
-                "video_src": "matsim_vvideo2.mp4",
+                "video_src": "MATSim_video_Mando_dubbed/MATSim_Mando_PM Nathan Road_dubbed.mp4",
                 "video_desc": "欢迎来到九龙主干道之一的弥敦道。观察公交车从尖沙咀行驶到旺角的行程，以每秒的精准度观察交通、速度和车辆轨迹。我们的模拟涵盖了车道细节和信号等信息，提供了全面的交通道路运输系统仿真。深入探索道路细节，细察香港繁忙的交通网络。"
             },
             {
                 "title":"香港岛 上午<br />- 高峰时间",
-                "video_src": "matsim_vvideo3.mp4",
+                "video_src": "MATSim_video_Mando_dubbed/MATSim_Mando_HK island AM Peak_dubbed.mp4",
                 "video_desc": "我们的模拟模型使我们能够预测建造新的中环湾仔绕道后交通拥堵的分流和缓解情况。请观看车辆如何转移到新道路上。这提供了交通模式的全面视角，并展示了新道路的影响。我们的模拟使您能够分析新道路的影响，并获得有关交通基础设施如何影响城市移动的宝贵见解。"
             },
             {
                 "title": "信号化路口",
-                "video_src": "matsim_vvideo4.mp4",
+                "video_src": "MATSim_video_Mando_dubbed/MATSim_Mando_Signalised Junctions_dubbed.mp4",
                 "video_desc": "我们的模拟模型也包括道路定价和驾驶员路径选择。有了这个模型，我们可以预测交通分流和旅客模式选择，基于道路收费情况。请观看东区海底隧道的仿真，这是香港三条连接九龙与港岛的隧道之一。通过这个模型，您可以直观地了解道路定价对交通流量和模式选择的影响，并明白有关交通政策如何影响城市交通网络。总的来说，我们的模拟让我们详细了解香港交通，并能够分析不同的情景来作出规划。"
             },
             {
                 "title": "港铁网络",
-                "video_src": "matsim_vvideo5.mp4",
+                "video_src": "MATSim_video_Mando_dubbed/MATSim_Mando_MTR Network_dubbed.mp4",
                 "video_desc": "地铁是香港必不可少的交通模式，我们的模拟模型反映了这一点，包括了详细的地铁系统，包括时间表、真实行程时间、实际列车出发时间以及准确的车辆容量和配置。请观看地铁在香港的行驶情况。我们的模拟提供了地铁系统全面信息，使我们能够分析香港地铁系统的出行模式。"
             }
         ],

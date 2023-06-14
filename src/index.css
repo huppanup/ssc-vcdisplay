@@ -330,21 +330,31 @@ button:hover {
 
 /******** Video Element ********/
 
-.vvideo-container {
-    top: -4%;
+.vvideo-container.container-left {
+    top: -2%;
+    right: -33%;
+    width: 31vh;
+    height: 56vh;
+    padding-top: 0;
+    position: relative;
+}
+
+.vvideo-container.container-right {
+    top: -2%;
     left: 5%;
-    width: 90%;
-    height: 72%;
+    width: 31vh;
+    height: 56vh;
     padding-top: 0;
     position: relative;
 }
 
 .vvideo-container video {
-    width: 80%;
+    width: 100%;
     height: 100%;
     position: absolute;
     /* object-fit: cover; */
     z-index: 0;
+    opacity: 0.9;
 }
 
 video {
