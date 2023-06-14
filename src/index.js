@@ -102,9 +102,9 @@ function Board() {
 function TranslateButton({ lang, toggle }) {
   return (
     <div key={lang} style={{ position: 'absolute', bottom: '2%', right: '2%' }} onClick={() => toggle()}>
-      <img src={lang === "cn" ? "cn_selected.svg" : "cn.svg"} style={{ height: "2.8vh", marginRight: '2vh' }} alt={lang === "cn" ? "cn_selected.svg" : "cn.svg"} />
-      <img src="bar.svg" style={{ height: "2.8vh", marginRight: '2vh' }} alt="bar.svg" />
-      <img src={lang === "en" ? "en_selected.svg" : "en.svg"} style={{ height: "2.5vh" }} alt={lang === "en" ? "en_selected.svg" : "en.svg"} />
+      <img src={lang === "cn" ? "cn_selected.svg" : "cn.svg"} style={{ height: "5vh", marginRight: '2vh' }} alt={lang === "cn" ? "cn_selected.svg" : "cn.svg"} />
+      <img src="bar.svg" style={{ height: "5vh", marginRight: '2vh' }} alt="bar.svg" />
+      <img src={lang === "en" ? "en_selected.svg" : "en.svg"} style={{ height: "4.5vh" }} alt={lang === "en" ? "en_selected.svg" : "en.svg"} />
     </div >
   );
 }
