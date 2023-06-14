@@ -141,7 +141,6 @@ function Panel({ panel_data, isLeft, selectedButton, buttonClickHandler, lang })
   const [videoDesc, setVideoDesc] = useState(panel_data.buttons[0].video_desc);
   
   const images = panel_data.slides;
-  console.log(images);
   const reg_video = /\.(mov|mp4)/i;
   return (
     <div>
@@ -208,7 +207,7 @@ function Panel({ panel_data, isLeft, selectedButton, buttonClickHandler, lang })
 
 function Icon(props) {
   return (
-    <svg width="20" height="20" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="2vh" height="2vh" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path fillRule="evenodd" clipRule="evenodd" d="M9 9.5V34.5L34 22L9 9.5Z" fill="#1A1A1A" />
     </svg>
   );

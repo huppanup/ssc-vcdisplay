@@ -19,7 +19,7 @@ body {
 
 body {
     background-size: cover;
-    background-image: url('resource/image/background.png');
+    background-image: url('resource/image/background.gif');
 }
 
 #filter {
@@ -267,7 +267,7 @@ span.home-left-half {
 }
 
 .sub.title {
-    font-size: 3vh;
+    font-size: 4vh;
     font-weight: 700;
     overflow: hidden;
 }
@@ -276,7 +276,7 @@ span.home-left-half {
     max-width: 100%;
     /* flex-direction: column; */
     /* flex-wrap: wrap; */
-    font-size: 1.3vh;
+    font-size: 1.4vh;
     font-weight: 400;
     overflow: hidden;
 }
