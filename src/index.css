@@ -378,10 +378,10 @@ video {
 
 .video-desc-box {
     font-size: 1.4vh;
-    font-style: italic;
     padding: 1.5%;
     color: white;
 }
+
 .video-desc-title {
     margin:auto;
     top: 3vh;
