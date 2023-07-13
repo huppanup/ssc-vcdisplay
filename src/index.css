@@ -187,7 +187,7 @@ body {
     left: calc(50% + 0.065vh);
 }
 
-.ust-logo {
+/* .ust-logo {
     width: 5vh;
     height: 5vh;
     top: 2vh;
@@ -196,7 +196,7 @@ body {
     position: absolute;
     background-size: cover;
     background-image: url('../public/ust_logo.png');
-}
+} */
 
 /******* Menu Title & Descriptions *********/
 
