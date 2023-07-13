@@ -40,7 +40,7 @@ function Board() {
     console.log("Show explore panels : " + isPanel);
     console.log("Is left panel : " + isLeft);
     setIsPanelShown(isPanel);
-    if (!isPanel){
+    if (!isPanel) {
       document.getElementById('right').classList.remove('active');
       document.getElementById('left').classList.remove('active');
       document.getElementsByClassName('doughnut-border')[0].classList.remove('move-down');
@@ -109,29 +109,30 @@ function TranslateButton({ lang, toggle }) {
   );
 }
 
-function Description({title, description}) {
+function Description({ title, description }) {
   return (
     <div className="video-desc-box fade-in">
       <div className="video-desc-title" dangerouslySetInnerHTML={{ __html: title }}></div>
-      <img src={"text_border_top.png"} style={{ maxWidth: "100%"}}></img>
+      <img src={"text_border_top.png"} style={{ maxWidth: "100%" }}></img>
       <span className="video-desc-text" dangerouslySetInnerHTML={{ __html: description }}></span>
       <img className="border-bottom" src={"text_border_bottom.png"} style={{}}></img>
     </div>
   );
 }
 
-function QR({isLeft, lang}){
+function QR({ isLeft, lang }) {
   return (
     <div className="qr-container" style={{
       position: "fixed",
-      right: isLeft? "3vh" : "",
-      left: isLeft? "" : "3vh"
+      right: isLeft ? "3vh" : "",
+      left: isLeft ? "" : "3vh"
     }} >
-      <div style={{color: 'white'}}>{lang === "cn" ? "了解更多！" : "Get to know our team!"}</div>
+      <div style={{ color: 'white' }}>{lang === "cn" ? "了解更多！" : "Get to know our team!"}</div>
       <br></br>
       <img src={QRCode} style={{
-      width: "100%"}}></img>
-  </div>
+        width: "100%"
+      }}></img>
+    </div>
   );
 }
 
@@ -139,67 +140,67 @@ function Panel({ panel_data, isLeft, selectedButton, buttonClickHandler, lang })
   const [videoSrc, setVideoSrc] = useState(panel_data.buttons[0].video_src);
   const [videoTitle, setVideoTitle] = useState(panel_data.buttons[0].video_title);
   const [videoDesc, setVideoDesc] = useState(panel_data.buttons[0].video_desc);
-  
+
   const images = panel_data.slides;
   const reg_video = /\.(mov|mp4)/i;
   return (
     <div>
-    <div style={{
-      position: "absolute",
-      width: "44.4vw",
-      height: "90%",
-      left: isLeft ? "calc(50% - 44.4vw)" : "50%",
-      top: "5%"
-    }}>
-      <div className={"fade vvideo-container " + (isLeft ? "container-left" : "container-right")}>
-        <video key={videoSrc + (isLeft ? "0" : "1")} autoPlay muted loop poster={videoSrc.match(reg_video) ? "" : videoSrc} >
-          <source src={"video/" + videoSrc} type="video/mp4" />
-        </video>
-      </div>
-      <div style={isLeft ? {
-        display: "flex",
-        width: "29%",
-        flexWrap: "wrap",
+      <div style={{
         position: "absolute",
-        bottom: "5%",
-        left: "-5%",
-        flexDirection: "column"
-      } : {
-        display: "flex",
-        width: "29%",
-        flexWrap: "wrap",
-        position: "absolute",
-        bottom: "5%",
-        right: "-1%",
-        flexDirection: "column"
-      }}
-      >
-        {
-          panel_data.buttons.map((button, i) => (
-            <button className={i === selectedButton ? `panel button-selected ${lang}` : `panel ${lang}`} key={i} onClick={() => {
-              buttonClickHandler(i);
-              setVideoSrc(button.video_src);
-              setVideoDesc(button.video_desc);
-              setVideoTitle(button.video_title);
-            }} style={{
-              display: "inline-flex",
-              alignItems: "center"
-            }}><span className='button-text' dangerouslySetInnerHTML={{ __html: button.title }}></span></button>
-          ))
-        }
+        width: "44.4vw",
+        height: "90%",
+        left: isLeft ? "calc(50% - 44.4vw)" : "50%",
+        top: "5%"
+      }}>
+        <div className={"fade vvideo-container " + (isLeft ? "container-left" : "container-right")}>
+          <video key={videoSrc + (isLeft ? "0" : "1")} autoPlay muted loop poster={videoSrc.match(reg_video) ? "" : videoSrc} >
+            <source src={"video/" + videoSrc} type="video/mp4" />
+          </video>
+        </div>
+        <div style={isLeft ? {
+          display: "flex",
+          width: "29%",
+          flexWrap: "wrap",
+          position: "absolute",
+          bottom: "5%",
+          left: "-5%",
+          flexDirection: "column"
+        } : {
+          display: "flex",
+          width: "29%",
+          flexWrap: "wrap",
+          position: "absolute",
+          bottom: "5%",
+          right: "-1%",
+          flexDirection: "column"
+        }}
+        >
+          {
+            panel_data.buttons.map((button, i) => (
+              <button className={i === selectedButton ? `panel button-selected ${lang}` : `panel ${lang}`} key={i} onClick={() => {
+                buttonClickHandler(i);
+                setVideoSrc(button.video_src);
+                setVideoDesc(button.video_desc);
+                setVideoTitle(button.video_title);
+              }} style={{
+                display: "inline-flex",
+                alignItems: "center"
+              }}><span className='button-text' dangerouslySetInnerHTML={{ __html: button.title }}></span></button>
+            ))
+          }
+        </div>
       </div>
-    </div>
-    <div style={{
-      position: "absolute",
-      width: "47vw",
-      height: "50%",
-      left: isLeft ? "50%" : "calc(50% - 47vw)" ,
-      top: "5%",
-      display: "flex",
-      alignItems: "center"
-    }}>
-      <Description title={videoTitle} description={videoDesc}/>
-    </div>
+      <div style={{
+        position: "absolute",
+        width: "47vw",
+        height: "50%",
+        left: isLeft ? "50%" : "calc(50% - 47vw)",
+        top: "5%",
+        display: "flex",
+        alignItems: "center"
+      }}>
+        <Description title={videoTitle} description={videoDesc} />
+      </div>
       <QR isLeft={isLeft} lang={lang}></QR>
     </div>
   );
@@ -237,11 +238,11 @@ function Home({ onClick, lang }) {
 }
 
 function Explore({ onClick = f => f, onClickHandler = f => f, lang }) {
-  let timeoutID = setTimeout(function(){onClick(); onClickHandler(false, true);}, 120000);
+  let timeoutID = setTimeout(function () { onClick(); onClickHandler(false, true); }, 120000);
 
   function resetTimer() {
     clearTimeout(timeoutID);
-    timeoutID = setTimeout(function(){onClick(); onClickHandler(false, true);}, 120000);
+    timeoutID = setTimeout(function () { onClick(); onClickHandler(false, true); }, 120000);
   }
 
   document.addEventListener("mousemove", resetTimer);
@@ -255,16 +256,16 @@ function Explore({ onClick = f => f, onClickHandler = f => f, lang }) {
       <div className='home-bg fade-in move-down'>
         <div id="left" className='sub-left' tabIndex={1} onClick={() => onClickHandler(true, true)}>
           <span className='sub title'>DISCO</span>
-          <span className='sub description'><span>{data_lang.disco.line1}&nbsp;</span><span>{data_lang.disco.line2}&nbsp;</span><span>{data_lang.disco.line3}&nbsp;</span><span>{data_lang.disco.line4}&nbsp;</span><span>{data_lang.disco.line5}</span></span>
+          <span className='sub description' style={lang === "cn" ? { fontSize: "2.1vh" } : {}}><span>{data_lang.disco.line1}&nbsp;</span><span>{data_lang.disco.line2}&nbsp;</span><span>{data_lang.disco.line3}&nbsp;</span><span>{data_lang.disco.line4}&nbsp;</span><span>{data_lang.disco.line5}</span></span>
         </div>
         <div className='v-divider'></div>
         <div id="right" className='sub-right' tabIndex={2} onClick={() => onClickHandler(true, false)}>
           <span className='sub title'>MAT<span className='sub-title' style={{ fontSize: 'smaller' }}>Sim</span></span>
-          <span className='sub description'><span>{data_lang.matsim.line1}&nbsp;</span><span>{data_lang.matsim.line2}&nbsp;</span><span>{data_lang.matsim.line3}</span></span>
+          <span className='sub description' style={lang === "cn" ? { fontSize: "2.1vh" } : {}}><span>{data_lang.matsim.line1}&nbsp;</span><span>{data_lang.matsim.line2}&nbsp;</span><span>{data_lang.matsim.line3}</span></span>
           {/* Button for testing only */}
         </div>
       </div>
-      <div id="home-button" onClick={() => {onClick(); onClickHandler(false, true) }}><img id="home-icon" src={HomeIcon} alt="home" /></div>
+      <div id="home-button" onClick={() => { onClick(); onClickHandler(false, true) }}><img id="home-icon" src={HomeIcon} alt="home" /></div>
     </>
 
   );
