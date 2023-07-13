@@ -7,7 +7,7 @@ import data from "./data.json";
 import data_cn from "./data_cn.json"
 import { CSSTransition } from 'react-transition-group';
 import HomeIcon from "./resource/image/ico_home.png";
-import QRCode from "./resource/image/disco_qr.png";
+import QRCode from "./resource/image/disco_qr2.png";
 
 function Board() {
   const [selectedButton, setSelectedButton] = useState(-1);
